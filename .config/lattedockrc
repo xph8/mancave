@@ -1,0 +1,31 @@
+[KPropertiesDialog]
+eDP-1 Height 1080=503
+eDP-1 Width 1920=434
+
+[Notification Messages]
+really_clear_history=true
+
+[PlasmaThemeExtended]
+outlineWidth=1
+
+[ScreenConnectors]
+10=eDP-1
+
+[UniversalSettings]
+badges3DStyle=false
+canDisableBorders=false
+currentLayout=Plasma
+downloadWindowSize=800,550
+lastNonAssignedLayout=Plasma
+launchers=applications:org.mozilla.firefox.desktop,applications:org.kde.dolphin.desktop,applications:md.obsidian.Obsidian.desktop,applications:code.desktop
+layoutsColumnWidths=129,80,76,0
+layoutsWindowSize=700,607
+memoryUsage=0
+metaPressAndHoldEnabled=true
+mouseSensitivity=2
+screenTrackerInterval=2500
+showInfoWindow=true
+version=2
+
+[UniversalSettings][ScreenScales]
+eDP-1=1.04;1
