@@ -1,9 +1,6 @@
 [ActionPlugins][1]
 RightButton;NoModifier=org.kde.latte.contextmenu
 
-[Containments][1][Applets][57][Configuration][General]
-launchers59=applications:org.mozilla.firefox.desktop,applications:org.kde.dolphin.desktop,applications:md.obsidian.Obsidian.desktop,applications:code.desktop
-
 [Containments][61]
 activityId=
 byPassWM=false
@@ -29,7 +26,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][61][Applets][64][Configuration]
-PreloadWeight=84
+PreloadWeight=72
 
 [Containments][61][Applets][64][Configuration][Appearance]
 dateFormat=isoDate
@@ -44,7 +41,7 @@ immutability=1
 plugin=org.kde.plasma.kickerdash
 
 [Containments][61][Applets][66][Configuration]
-PreloadWeight=43
+PreloadWeight=86
 
 [Containments][61][Applets][66][Configuration][ConfigDialog]
 DialogHeight=720
@@ -53,6 +50,7 @@ DialogWidth=960
 [Containments][61][Applets][66][Configuration][General]
 favoriteSystemActions=logout
 favoritesPortedToKAstats=true
+hiddenApplications=realvnc-vncviewer.desktop
 showRecentApps=false
 showRecentDocs=false
 
@@ -75,7 +73,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][61][Applets][68][Configuration]
-PreloadWeight=97
+PreloadWeight=92
 SystrayContainmentId=69
 
 [Containments][61][Applets][80]
@@ -96,9 +94,12 @@ PreloadWeight=0
 immutability=1
 plugin=org.kde.latte.plasmoid
 
+[Containments][61][Applets][84][Configuration]
+PreloadWeight=0
+
 [Containments][61][Applets][84][Configuration][General]
 isInLatteDock=true
-launchers59=applications:org.mozilla.firefox.desktop,applications:org.kde.dolphin.desktop,applications:md.obsidian.Obsidian.desktop,applications:code.desktop,file:///latte-separator1.desktop
+launchers59=applications:org.mozilla.firefox.desktop,applications:org.kde.dolphin.desktop,applications:md.obsidian.Obsidian.desktop,applications:steam.desktop,file:///latte-separator2.desktop,applications:org.kde.konsole.desktop,applications:code.desktop,file:///latte-separator1.desktop
 
 [Containments][61][ConfigDialog]
 DialogHeight=957
@@ -111,7 +112,7 @@ PreloadWeight=0
 animationLauncherBouncing=false
 animationWindowAddedInGroup=false
 animationWindowInAttention=false
-appletOrder=66;67;88;84;68;80;82;64
+appletOrder=66;67;84;68;80;82;64
 configurationSticker=true
 dragActiveWindowEnabled=true
 iconSize=25
@@ -125,8 +126,8 @@ plasmaBackgroundForPopups=true
 scrollAction=ScrollTasks
 shadows=None
 solidBackgroundForMaximized=true
-splitterPosition=4
-splitterPosition2=5
+splitterPosition=3
+splitterPosition2=4
 thickMargin=15
 titleTooltips=false
 zoomLevel=0
@@ -164,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][69][Applets][71][Configuration]
-PreloadWeight=91
+PreloadWeight=84
 
 [Containments][69][Applets][72]
 immutability=1
@@ -185,14 +186,14 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][69][Applets][76][Configuration]
-PreloadWeight=74
+PreloadWeight=77
 
 [Containments][69][Applets][77]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][69][Applets][77][Configuration]
-PreloadWeight=30
+PreloadWeight=63
 
 [Containments][69][Applets][78]
 immutability=1
@@ -206,13 +207,6 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][69][Applets][79][Configuration]
-PreloadWeight=0
-
-[Containments][69][Applets][83]
-immutability=1
-plugin=org.kde.plasma.mediacontroller
-
-[Containments][69][Applets][83][Configuration]
 PreloadWeight=0
 
 [Containments][69][ConfigDialog]

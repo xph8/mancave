@@ -8,14 +8,6 @@ really_clear_history=true
 [PlasmaThemeExtended]
 outlineWidth=1
 
-[PlasmaTransientsConfig]
-PreloadWeight=0
-enableKWinEdges=true
-raiseOnActivityChange=false
-raiseOnDesktopChange=false
-timerHide=500
-timerShow=50
-
 [ScreenConnectors]
 10=eDP-1
 
