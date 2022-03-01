@@ -5,13 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Source Prezto.
+# source prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # p10k configuration. To customize run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh 
+
+# pipenv virtual enviournment
+path+=(~/.local/bin)
 
 # utility
 alias dotman='/usr/bin/git --git-dir=/home/xph8/.dotfiles/ --work-tree=/home/xph8'
@@ -21,3 +24,9 @@ alias update='sudo bash ~/scripts/update.sh'
 alias youtube-dl='noglob youtube-dl'
 alias -g audio='-i --extract-audio --audio-format mp3 --audio-quality 0'
 alias -g audio-playlist='-ic -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0'
+
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
+
+# pip
+# alias pip='pipenv'
