@@ -1,43 +1,23 @@
-https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.3.0-live+nonfree/amd64/iso-hybrid/
+### xph8-mancave
 
-make file test
-
-sudo apt install polybar
-
-scientifica
-Kochi Gothic japanese counterpart
-
-vscodium
-
-1. Add to sudoers
-- delete all old software
-2. check sources.list?
-3. run script
-4. reboot
-
-
-cave update
-picom
-
-
-Distro: Debian
+Distro: [Debian](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.3.0-live+nonfree/amd64/iso-hybrid/)
 Desktop Enviournment: KDE Plasma
+
 Typography: Nota Sans (UI), Hack (monospace)
+Colour Scheme: 
 
-Panel: Polybar
-Application Style: ClassiK
+Bar: Polybar
+Launcher: Rofi
+Application Style: Klassy
 
-Terminal: konsole
+Terminal: Alacritty
 Shell: zsh
-Zsh Manager: Oh My Zsh
-Zsh Theme: p10k
+Zsh Manager: Prezto
+Zsh Theme: powerlevel10k
 
-Window Manager: KWin
-WM Theme: 
 
-Plasma Theme: Breeze Dark
-GTK3 Theme: Breeze
-Icons: breeze-dark
+Browser: Firefox
+Music Player: ncmpcpp
+Editor: VSCodium
 
-Window Decoration: 
-GTK Theme:
+* * *

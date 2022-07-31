@@ -1,21 +1,25 @@
 #! /bin/bash
 
-# /etc/apt/sources.list
+###############################################################################
+# clone dotfiles
+###############################################################################
+
+sudo apt update
+sudo apt install git
+
+mkdir $HOME/.dotfiles/.git
+git clone --bare https://github.com/xph8/dotfiles $HOME/.dotfiles/.dotman/
+git --git-dir=$HOME/.dotfiles/.dotman/ --work-tree=$HOME config status.showUntrackedFiles no
 
 
 ###############################################################################
 # core linux update
 ###############################################################################
 
+sudo cd apt/sources.list /etc/apt/sources.list
+
 sudo apt update
 sudo apt upgrade --yes
-sudo apt distro-update
-
-###############################################################################
-# setup directory structure
-###############################################################################
-
-mkdir -p ${HOME}/Primary ${HOME}/Auxilary ${HOME}/Archive
 
 ###############################################################################
 # install essential packages
@@ -75,7 +79,7 @@ python3 -m pip install --upgrade "${PIP_PACKAGES[@]}";
 sudo apt install docker
 
 # ansible
-sudo apt install ansible # pyhton?
+sudo apt install ansible # python?
 
 # jenkins docker container
 docker run --name jenkins -d -p 8080:8080 -p 50000:50000 -v ~/jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
@@ -90,6 +94,8 @@ sudo apt install openjdk-17-jdk
 ###############################################################################
 
 PIP_PACKAGES=(
+    setuptools
+    wheel
     youtube-dl
 )
 python3 -m pip install --upgrade "${PIP_PACKAGES[@]}";
@@ -99,15 +105,17 @@ sudo apt install rsync
 sudo apt install synaptic neofetch
 
 ###############################################################################
-# clone dotfiles
+# setup directory structure
 ###############################################################################
 
+mkdir -p $HOME/Primary $HOME/Auxilary $HOME/Archive
 
 ###############################################################################
 # install software
 ###############################################################################
 
 sudo apt install -t bullseye-backports libreoffice
+sudo apt install -t bullseye-backports libreoffice-kde libreoffice-gtk3
 # syncthing
 
 ###############################################################################
@@ -121,11 +129,7 @@ sudo apt install flatpak
 # setup desktop
 ###############################################################################
 
-sudo apt install polybar
+sudo apt install -t bullseye-backports polybar
 # executable permisions to launch.sh chmod +x ~/.config/polybar/launch.sh
 
-###############################################################################
-# manual steps?
-###############################################################################
-
-# docker login
+sudo apt install -t bullseye-backports rofi

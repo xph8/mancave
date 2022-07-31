@@ -5,3 +5,5 @@ flatpak update
 
 # zprezto-update
 # jenkins image
+
+# switch to topgrade
