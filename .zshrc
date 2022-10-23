@@ -18,7 +18,7 @@ path+=(~/.local/bin)
 
 # utility
 alias dotman='/usr/bin/git --git-dir=$HOME/.dotfiles/.dotman/ --work-tree=$HOME'
-alias makedo='make -C $HOME/cli-utils/'
+alias makedo='make -C $HOME/scripts/'
 
 # youtube-dl
 alias youtube-dl='noglob youtube-dl'

@@ -21,3 +21,10 @@ Music Player: ncmpcpp
 Editor: VSCodium
 
 * * *
+
+#### Install
+```bash
+curl -s https://raw.githubusercontent.com/xph8/dotfiles/master/.dotfiles/install.sh | sudo bash
+```
+
+* * *

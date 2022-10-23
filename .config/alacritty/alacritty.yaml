@@ -6,12 +6,18 @@ font:
    family: "JetBrainsMono Nerd Font"
 
 window:
-  padding:
-    x: 15
-    y: 15
   dimensions:
     columns: 120
     lines: 30
+  padding:
+    x: 15
+    y: 15
+  decorations: full
+
+scrolling:
+  history: 5000
+  multiplier: 3
+  auto_scroll: true
 
 cursor:
   unfocused_hollow: true
@@ -20,7 +26,3 @@ cursor:
 
 env:
   TERM: xterm-256color
-
-scrolling:
-  history: 5000
-  auto_scroll: true
