@@ -1,5 +1,14 @@
 #! /bin/bash
 
+
+#                ______ _______                                                          
+# ____  ____________  /___( __ )      _______ _________ ___________________ ___   ______ 
+# __  |/_/__  __ \_  __ \  __  |________  __ `__ \  __ `/_  __ \  ___/  __ `/_ | / /  _ \
+# __>  < __  /_/ /  / / / /_/ /_/_____/  / / / / / /_/ /_  / / / /__ / /_/ /__ |/ //  __/
+# /_/|_| _  .___//_/ /_/\____/        /_/ /_/ /_/\__,_/ /_/ /_/\___/ \__,_/ _____/ \___/ 
+#        /_/                                                                             
+
+
 ###############################################################################
 # varibales
 ###############################################################################
@@ -60,18 +69,10 @@ apt install tlp
 ###############################################################################
 
 # compilers
-apt install cmake clang gcc golang
-
-# version control
-apt install git
-
-# utils
-apt install make tmux
+apt install cmake clang gcc golang rust
 
 # python
 apt install python3 python3-pip pipenv pyenv python-is-python3
-
-# setup venv
 
 # update python3 pip and install pip packages
 PIP_PACKAGES=(
@@ -80,6 +81,12 @@ PIP_PACKAGES=(
     wheel
 )
 python3 -m pip install --upgrade "${PIP_PACKAGES[@]}";
+
+# version control
+apt install git
+
+# utils
+apt install make tmux
 
 # docker kubectl minikube helm
 apt install docker
@@ -103,8 +110,6 @@ apt install openjdk-17-jdk
 apt install zsh
 chsh -s /bin/zsh # does not work? maybe copy .zsh files first?
 
-# load zpreto files
-
 # editors
 apt install nano neovim
 
@@ -120,8 +125,9 @@ PIP_PACKAGES=(
 python3 -m pip install --upgrade "${PIP_PACKAGES[@]}";
 apt install ffmpeg
 
+cargo install topgrade
+
 apt install rsync
-apt install synaptic
 
 ###############################################################################
 # setup flatpak
@@ -136,20 +142,28 @@ flatpak install flathub com.github.tchx84.Flatseal
 # reboot system?
 
 ###############################################################################
+# install development software
+###############################################################################
+
+# github desktop
+flatpak install flathub io.github.shiftey.Desktop
+
+# vscode
+flatpak install flathub com.vscodium.codium
+
+# pycharm
+# flatpak install flathub com.jetbrains.PyCharm-Community
+
+# postman
+flatpak install flathub com.getpostman.Postman
+
+# virtual box
+
+###############################################################################
 # install software
 ###############################################################################
 
-apt install -t $backports libreoffice
-apt install -t $backports libreoffice-kde libreoffice-gtk3
-
-# libreoffice
-flatpak install flathub org.libreoffice.LibreOffice
-
-# syncthing
-flatpak install flathub me.kozec.syncthingtk
-
-# obsidian
-flatpak install flathub md.obsidian.Obsidian
+# essentials
 
 # firefox
 flatpak install flathub org.mozilla.firefox
@@ -160,35 +174,25 @@ flatpak install flathub com.github.micahflee.torbrowser-launcher
 # thunderbird
 flatpak install flathub org.mozilla.Thunderbird
 
-# virtual box
-# proton vpn
-
-# krita
-flatpak install flathub org.kde.krita
-
-# spotify
-flatpak install flathub com.spotify.Client
-
-# qbittorrent
-flatpak install flathub org.qbittorrent.qBittorrent
-
-# vlc
-flatpak install flathub org.videolan.VLC
-
-# taiga
-# haruko
-
 # discord
 flatpak install flathub com.discordapp.Discord
 
-# calibre
-flatpak install flathub com.calibre_ebook.calibre
+# element
+flatpak install flathub im.riot.Riot
 
 # bitwarden
 flatpak install flathub com.bitwarden.desktop
 
-# mega sync
-flatpak install flathub nz.mega.MEGAsync
+# libreoffice
+flatpak install flathub org.libreoffice.LibreOffice
+
+# media
+
+# vlc
+flatpak install flathub org.videolan.VLC
+
+# krita
+flatpak install flathub org.kde.krita
 
 # audacity
 flatpak install flathub org.audacityteam.Audacity
@@ -199,12 +203,41 @@ flatpak install flathub fr.handbrake.ghb
 # obs
 flatpak install flathub com.obsproject.Studio
 
-# vscode
-flatpak install flathub com.visualstudio.code
-flatpak install flathub com.vscodium.codium
+# information
 
-# postman
-flatpak install flathub com.getpostman.Postman
+# obsidian
+flatpak install flathub md.obsidian.Obsidian
+
+# xournal++
+flatpak install flathub com.github.xournalpp.xournalpp
+
+# calibre
+flatpak install flathub com.calibre_ebook.calibre
+
+# sigil
+flatpak install flathub com.sigil_ebook.Sigil
+
+# network
+
+# syncthing
+flatpak install flathub me.kozec.syncthingtk
+# flatpak install flathub com.github.zocker_160.SyncThingy
+
+# qbittorrent
+flatpak install flathub org.qbittorrent.qBittorrents
+
+# mega sync
+flatpak install flathub nz.mega.MEGAsync
+
+# proton vpn
+
+# entertainment
+
+# spotify
+flatpak install flathub com.spotify.Client
+
+# haruko
+flatpak install flathub io.github.hakuneko.HakuNeko
 
 ###############################################################################
 # install games

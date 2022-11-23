@@ -3,3 +3,6 @@
 	email = xpheight@gmail.com
 [init]
 	defaultBranch = master
+[core]
+	ignorecase = false
+	excludesfile = ~/.gitignore_global
