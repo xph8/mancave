@@ -1,0 +1,8 @@
+{
+    "colorscheme": "dantalian-nordic",
+
+    "tabsize": 4,
+    "*.yaml": {
+        "tabsize": 2
+    }
+}

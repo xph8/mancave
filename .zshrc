@@ -16,6 +16,9 @@ fi
 # pipenv virtual enviournment
 path+=(~/.local/bin)
 
+# suggest correction to previous command
+eval $(thefuck --alias tf)
+
 # utility
 alias dotman='/usr/bin/git --git-dir=$HOME/.dotfiles/.dotman/ --work-tree=$HOME'
 alias makedo='make -C $HOME/scripts/'

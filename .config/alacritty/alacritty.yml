@@ -1,0 +1,21 @@
+window:
+  title: mancave
+  dimensions:
+    columns: 150
+    lines: 30
+  padding:
+    x: 10
+    y: 10
+
+font:
+  size: 14
+
+cursor:
+  style:
+    shape: Black
+    blinking: Off
+
+env:
+  TERM: xterm-256-color
+
+live_config_reload: true

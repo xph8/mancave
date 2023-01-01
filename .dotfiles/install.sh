@@ -1,12 +1,12 @@
 #! /bin/bash
 
 
-#                ______ _______                                                          
-# ____  ____________  /___( __ )      _______ _________ ___________________ ___   ______ 
-# __  |/_/__  __ \_  __ \  __  |________  __ `__ \  __ `/_  __ \  ___/  __ `/_ | / /  _ \
-# __>  < __  /_/ /  / / / /_/ /_/_____/  / / / / / /_/ /_  / / / /__ / /_/ /__ |/ //  __/
-# /_/|_| _  .___//_/ /_/\____/        /_/ /_/ /_/\__,_/ /_/ /_/\___/ \__,_/ _____/ \___/ 
-#        /_/                                                                             
+#                ______ ________________                                                  
+# ____  ____________  /___( __ )_____/_/______ _________ ___________________ ___   ______ 
+# __  |/_/__  __ \_  __ \  __  |___/_/ __  __ `__ \  __ `/_  __ \  ___/  __ `/_ | / /  _ \
+# __>  < __  /_/ /  / / / /_/ /__/_/   _  / / / / / /_/ /_  / / / /__ / /_/ /__ |/ //  __/
+# /_/|_| _  .___//_/ /_/\____/ /_/     /_/ /_/ /_/\__,_/ /_/ /_/\___/ \__,_/ _____/ \___/ 
+#        /_/                                                                               
 
 
 ###############################################################################
@@ -17,6 +17,16 @@ backports=bullseye-backports
 dotfiles="$HOME/.dotfiles"
 
 ###############################################################################
+# dotfiles manager
+###############################################################################
+
+apt update
+apt install git
+
+git clone --bare https://github.com/xph8/mancave $dotfiles/.dotman/
+git --git-dir=$dotfiles/.dotman/ --work-tree=$HOME config status.showUntrackedFiles no
+
+###############################################################################
 # core linux update
 ###############################################################################
 
@@ -24,15 +34,6 @@ cp apt/sources.list /etc/apt/sources.list
 
 apt update
 apt upgrade --yes
-
-###############################################################################
-# dotfiles manager
-###############################################################################
-
-apt install git
-
-git clone --bare https://github.com/xph8/dotfiles $dotfiles/.dotman/
-git --git-dir=$dotfiles/.dotman/ --work-tree=$HOME config status.showUntrackedFiles no
 
 ###############################################################################
 # setup directory structure
@@ -49,7 +50,7 @@ apt install wget curl
 apt install ca-certificates gnupg lsb-release
 
 # build essentials
-apt install build-essential dkms linux-headers-$(uname -r)
+apt install build-essential dkms
 
 # restricted packages (codes, fonts, archivers)
 apt install ttf-mscorefonts-installer libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi
@@ -69,24 +70,16 @@ apt install tlp
 ###############################################################################
 
 # compilers
-apt install cmake clang gcc golang rust
+apt install make cmake clang gcc golang rust
 
 # python
 apt install python3 python3-pip pipenv pyenv python-is-python3
 
-# update python3 pip and install pip packages
-PIP_PACKAGES=(
-    pip
-    setuptools
-    wheel
-)
-python3 -m pip install --upgrade "${PIP_PACKAGES[@]}";
+# update python3 pip and essentail packages
+python3 -m pip install --upgrade pip setuptools wheel
 
 # version control
 apt install git
-
-# utils
-apt install make tmux
 
 # docker kubectl minikube helm
 apt install docker
@@ -94,35 +87,39 @@ apt install docker
 # ansible
 apt install ansible
 
-# jenkins docker container
-docker run --name jenkins -d -p 8080:8080 -p 50000:50000 -v ~/jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
-docker stop jenkins
-
 # java runtime
-apt install default-jdk
-apt install openjdk-17-jdk
+apt install default-jdk openjdk-17-jdk
 
 ###############################################################################
-# setup terminal
+# setup terminal tools
 ###############################################################################
 
 # zsh shell
 apt install zsh
-chsh -s /bin/zsh # does not work? maybe copy .zsh files first?
+chsh -s /bin/zsh
 
-# editors
-apt install nano neovim
+# prezto
 
-apt install -t $backports ranger neofetch
+apt install -t $backports neofetch
+
+apt install -t $backports micro neovim
+
+apt install -t $backports ranger
+
+# setup tmux
+apt install -t $backports tmux
+git clone git clone https://github.com/tmux-plugins/tpm ~/.config/.tmux/plugins/tpm
+
+apt install -t $backports thefuck
+
+# resource monitor
+pip install glances
 
 ###############################################################################
 # install utils
 ###############################################################################
 
-PIP_PACKAGES=(
-    youtube-dl
-)
-python3 -m pip install --upgrade "${PIP_PACKAGES[@]}";
+python3 -m pip install --upgrade youtube-dl
 apt install ffmpeg
 
 cargo install topgrade
