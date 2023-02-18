@@ -11,19 +11,13 @@ Distro: [Debian Stable](https://cdimage.debian.org/cdimage/unofficial/non-free/c
 
 Desktop Enviournment: KDE Plasma
 
-
-
-Typography: 
-
-Colour Scheme: Dantalian Nordic
-
 Bar: Polybar
 
 Launcher: Rofi
 
 Application Style: Klassy
 
-
+* * *
 
 Terminal: Alacritty
 
@@ -34,3 +28,11 @@ Zsh Manager: Prezto
 Zsh Theme: powerlevel10k
 
 * * *
+
+Typography:
+- Helvetica
+- JetBrains Mono (monospace)
+- Scientifica (monospace bitmap)
+- Kochi Gothic (Japanese Typeface)
+
+Colour Scheme: Dantalian Nordic

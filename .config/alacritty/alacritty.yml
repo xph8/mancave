@@ -4,8 +4,18 @@ window:
     columns: 150
     lines: 30
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
+
+shell:
+  program: /usr/local/bin/tmux
+  args:  # create or attach a session
+    - new-session
+    - -A
+    - -s
+    - main
+
+working_directory: ~/Primary
 
 font:
   size: 14
@@ -14,6 +24,32 @@ cursor:
   style:
     shape: Black
     blinking: Off
+
+schemes:
+  DantalianNordic: &DantalianNordic
+    primary:
+      background: '0x131517'
+      foreground: '0xdadada'
+    normal:
+      black:   '0x1e1e1e'
+      red:     '0xbf616a'
+      green:   '0xa7b594'
+      yellow:  '0xebcb8b'
+      blue:    '0x81a1c1'
+      magenta: '0xb48ead'
+      cyan:    '0x8f9fb4'
+      white:   '0xc0c0c0'
+    bright:
+      black:   '0x52565f'
+      red:     '0xbf616a'
+      green:   '0x98bf5b'
+      yellow:  '0xebcb8b'
+      blue:    '0x81a1c1'
+      magenta: '0xb48ead'
+      cyan:    '0x8f9fb4'
+      white:   '0xc0c0c0' 
+
+colors: *DantalianNordic
 
 env:
   TERM: xterm-256-color

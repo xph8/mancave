@@ -108,7 +108,7 @@ apt install -t $backports ranger
 
 # setup tmux
 apt install -t $backports tmux
-git clone git clone https://github.com/tmux-plugins/tpm ~/.config/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.config/.tmux/plugins/tpm
 
 apt install -t $backports thefuck
 
@@ -200,6 +200,9 @@ flatpak install flathub fr.handbrake.ghb
 # obs
 flatpak install flathub com.obsproject.Studio
 
+# kdenlive
+flatpak install flathub org.kde.kdenlive
+
 # information
 
 # obsidian
@@ -236,6 +239,11 @@ flatpak install flathub com.spotify.Client
 # haruko
 flatpak install flathub io.github.hakuneko.HakuNeko
 
+# utility
+
+# bottles
+flatpak install flathub com.usebottles.bottles
+
 ###############################################################################
 # install games
 ###############################################################################
@@ -245,6 +253,9 @@ flatpak install flathub com.valvesoftware.Steam
 
 # minecraft launcher
 flatpak install flathub com.mojang.Minecraft
+
+# prism launcher
+flatpak install flathub org.prismlauncher.PrismLauncher
 
 # overwolf
 
