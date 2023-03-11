@@ -1,0 +1,6 @@
+README.md
+{{ if ne .chezmoi.os "linux" }}
+.config/polybar/
+.config/kglobalshortcutsrc
+.local/share/wallpapers
+{{ end }}

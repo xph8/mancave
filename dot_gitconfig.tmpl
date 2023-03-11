@@ -1,0 +1,12 @@
+[user]
+	name = {{ .data.username }}
+	email = {{ .data.email }}
+[init]
+	defaultBranch = master
+[core]
+	ignorecase = false
+	excludesfile = ~/.gitignore_global
+{{- if eq .chezmoi.os "darwin" }}
+[credentials]
+    helper = osxkeychain
+{{- end }}

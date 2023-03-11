@@ -1,8 +1,0 @@
-[user]
-	name = xph8
-	email = xpheight@gmail.com
-[init]
-	defaultBranch = master
-[core]
-	ignorecase = false
-	excludesfile = ~/.gitignore_global

@@ -57,7 +57,10 @@ eval "$(pyenv virtualenv-init -)"
 #######################################
 
 alias c='clear'
-alias mo='micro'
+alias e='micro'
+
+alias ls='lsd'
+alias cat='bat'
 
 alias lgit='lazygit'
 alias tf='fuck'
