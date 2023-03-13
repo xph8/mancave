@@ -1,3 +1,4 @@
+.dotfiles/
 Brewfile
 README.md
 {{ if ne .chezmoi.os "linux" }}
