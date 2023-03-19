@@ -1,0 +1,24 @@
+{
+    "yaml.schemas":{
+        "kubernetes":"*.yaml"
+    },
+    "window.zoomLevel":1,
+    "redhat.telemetry.enabled":false,
+    "explorer.confirmDragAndDrop":false,
+    "explorer.confirmDelete":false,
+    "workbench.startupEditor":"none",
+    "git-graph.date.format":"ISO Date & Time",
+    "terminal.integrated.defaultProfile.osx":"zsh",
+    "editor.accessibilitySupport":"off",
+    "git.confirmSync":false,
+    "hediet.vscode-drawio.theme":"dark",
+    "vs-kubernetes":{
+        "vs-kubernetes.crd-code-completion":"disabled"
+    },
+    "diffEditor.renderSideBySide": false,
+    "workbench.colorTheme": "Dainty – Nord (chroma 0, lightness 0)",
+    "go.toolsManagement.autoUpdate": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+}
