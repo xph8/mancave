@@ -15,7 +15,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # p10k configuration. To customize run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh 
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #######################################
 # Autocompletions
@@ -41,16 +41,26 @@ eval $(thefuck --alias)
 # Python
 #######################################
 
-# pipenv virtual enviournment
-path+=(~/.local/bin)  # TODO move to zshenv
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+{{ if eq .chezmoi.os "darwin" }}
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+{{ end }}
 
 #######################################
 # Aliases
@@ -73,15 +83,11 @@ alias kc='kubectl'
 alias kb='kubebuilder'
 alias mk='minikube'
 alias sw='switch'
-
-# utility
-alias dotman='/usr/bin/git --git-dir=$HOME/.dotfiles/.dotman/ --work-tree=$HOME'
-alias makedo='make -C $HOME/scripts/'
+INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 
 # youtube-dl
 alias y-dl='noglob youtube-dl'
 alias -g audio='-i --extract-audio --audio-format mp3 --audio-quality 0'
 alias -g audio-playlist='-ic -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0'
 
-# pip
-# alias pip='pipenv'
+

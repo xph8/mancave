@@ -73,6 +73,7 @@ brew "pkg-config"
 cask "goland"
 cask "pycharm-ce"
 cask "visual-studio-code"
+cask "miniconda"
 
 cask "alacritty"
 cask "docker"

@@ -4,9 +4,17 @@
 [init]
 	defaultBranch = master
 [core]
+    editor = micro
 	ignorecase = false
 	excludesfile = ~/.gitignore_global
 {{- if eq .chezmoi.os "darwin" }}
 [credentials]
     helper = osxkeychain
 {{- end }}
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
+    ui = auto

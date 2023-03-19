@@ -22,7 +22,7 @@ font:
 
 cursor:
   style:
-    shape: Black
+    shape: Block
     blinking: Off
 
 schemes:
@@ -47,7 +47,7 @@ schemes:
       blue:    '0x81a1c1'
       magenta: '0xb48ead'
       cyan:    '0x8f9fb4'
-      white:   '0xc0c0c0' 
+      white:   '0xc0c0c0'
 
 colors: *DantalianNordic
 
