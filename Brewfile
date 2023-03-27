@@ -79,7 +79,7 @@ cask "alacritty"
 cask "docker"
 cask "github"
 
-cask "firefox"
+# cask "firefox"
 
 cask "tableplus"
 cask "mongodb-compass"

@@ -1,2 +1,4 @@
 # data is local to machine
 .chezmoidata.yaml
+
+Brewfile.lock.json
