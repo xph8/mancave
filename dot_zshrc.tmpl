@@ -45,23 +45,6 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-{{ if eq .chezmoi.os "darwin" }}
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-{{ end }}
-
 #######################################
 # Aliases
 #######################################
@@ -85,9 +68,9 @@ alias mk='minikube'
 alias sw='switch'
 INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 
+{{- if eq .chezmoi.os "linux" }}
 # youtube-dl
 alias y-dl='noglob youtube-dl'
 alias -g audio='-i --extract-audio --audio-format mp3 --audio-quality 0'
 alias -g audio-playlist='-ic -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0'
-
-
+{{- end }}
