@@ -1,2 +1,0 @@
-ARCHIVE='${HOME}/Archive'
-

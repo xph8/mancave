@@ -7,11 +7,6 @@
         /_/                                                                               
 ```
 
-Install
-```bash
-curl -s https://raw.githubusercontent.com/xph8/mancave/master/.dotfiles/install.sh | sudo bash
-```
-
 ```bash
 chezmoi init --apply https://github.com/xph8/mancave.git
 ```
@@ -22,11 +17,11 @@ Distro: Fedora
 
 Desktop Enviournment: KDE Plasma
 
+Application Style: Klassy
+
 Bar: Polybar
 
 Launcher: Rofi
-
-Application Style: Klassy
 
 * * *
 
@@ -34,19 +29,19 @@ Terminal: Alacritty
 
 Shell: zsh
 
-Zsh Manager: Prezto
-
-Zsh Theme: powerlevel10k
-
 * * *
 
 Typography:
-- Helvetica
+- Helvetica (normal)
 - JetBrains Mono (monospace)
 - Scientifica (monospace bitmap)
-- Kochi Gothic (Japanese Typeface)
+- Kochi Gothic (Japanese typeface)
+
+* * *
 
 Colour Scheme: Dantalian Nordic
+
+```yaml
 terminal:
   background: '#131517'  # black
   foreground: '#dadada'  # white
@@ -65,3 +60,10 @@ secondary:
   foreground:        '#52565f' '#585858'
   background-bright: '#131517'
   foreground-bright: '#c0c0c0' '#bcbcbc'
+```
+
+* * *
+
+Chezmoi setup
+
+* * *

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# copy to /etc from templates
+# dnf.conf hash: {{ include "dotfiles/dnf/dnf.conf" | sha256sum }}
+
+{{- if eq .chezmoi.os "linux" }}
+
+{{- end }}

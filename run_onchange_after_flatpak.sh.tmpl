@@ -1,0 +1,146 @@
+#!/bin/sh
+
+{{- if eq .chezmoi.os "linux" }}
+
+#########################################
+# setup flatpak
+#########################################
+
+apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# flatseal
+flatpak install flathub com.github.tchx84.Flatseal
+
+#########################################
+# development software
+#########################################
+
+# github desktop
+flatpak install flathub io.github.shiftey.Desktop
+
+# vscodium
+flatpak install flathub com.vscodium.codium
+
+# pycharm
+# flatpak install flathub com.jetbrains.PyCharm-Community
+
+# postman
+flatpak install flathub com.getpostman.Postman
+
+# virtual box
+
+#########################################
+# essentials
+#########################################
+
+# bitwarden
+flatpak install flathub com.bitwarden.desktop
+
+# firefox
+flatpak install flathub org.mozilla.firefox
+
+#########################################
+# communication
+#########################################
+
+# thunderbird
+flatpak install flathub org.mozilla.Thunderbird
+
+# discord
+flatpak install flathub com.discordapp.Discord
+
+# element
+flatpak install flathub im.riot.Riot
+
+#########################################
+# media
+#########################################
+
+# vlc
+flatpak install flathub org.videolan.VLC
+
+# krita
+flatpak install flathub org.kde.krita
+
+# audacity
+flatpak install flathub org.audacityteam.Audacity
+
+# handbreak
+flatpak install flathub fr.handbrake.ghb
+
+# obs
+flatpak install flathub com.obsproject.Studio
+
+# kdenlive
+flatpak install flathub org.kde.kdenlive
+
+# libreoffice
+flatpak install flathub org.libreoffice.LibreOffice
+
+#########################################
+# information
+#########################################
+
+# obsidian
+flatpak install flathub md.obsidian.Obsidian
+
+# xournal++
+flatpak install flathub com.github.xournalpp.xournalpp
+
+# calibre
+flatpak install flathub com.calibre_ebook.calibre
+
+# sigil
+flatpak install flathub com.sigil_ebook.Sigil
+
+#########################################
+# network
+#########################################
+
+# syncthing
+flatpak install flathub me.kozec.syncthingtk
+# flatpak install flathub com.github.zocker_160.SyncThingy
+
+# qbittorrent
+flatpak install flathub org.qbittorrent.qBittorrents
+
+# mega sync
+flatpak install flathub nz.mega.MEGAsync
+
+# proton vpn
+
+# tor browser
+flatpak install flathub com.github.micahflee.torbrowser-launcher
+
+#########################################
+# # entertainment
+#########################################
+
+# spotify
+flatpak install flathub com.spotify.Client
+
+# haruko
+flatpak install flathub io.github.hakuneko.HakuNeko
+
+#########################################
+# utility
+#########################################
+
+# bottles
+flatpak install flathub com.usebottles.bottles
+
+#########################################
+# games
+#########################################
+
+# steam
+flatpak install flathub com.valvesoftware.Steam
+
+# minecraft launcher
+flatpak install flathub com.mojang.Minecraft
+
+# prism launcher
+flatpak install flathub org.prismlauncher.PrismLauncher
+
+{{- end }}
