@@ -1,12 +1,14 @@
 #!/bin/sh
 
-{{- if eq .chezmoi.os "linux" }}
+{{- if ne .chezmoi.os "linux" }}
+exit 0
+{{- end }}
 
 #########################################
 # setup flatpak
 #########################################
 
-apt install flatpak
+dnf install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # flatseal
@@ -142,5 +144,3 @@ flatpak install flathub com.mojang.Minecraft
 
 # prism launcher
 flatpak install flathub org.prismlauncher.PrismLauncher
-
-{{- end }}

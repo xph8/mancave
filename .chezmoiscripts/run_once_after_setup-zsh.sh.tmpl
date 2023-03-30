@@ -1,5 +1,7 @@
 #!/bin/sh
 
+exit 0  # FIXME move all zsh files to .config/zsh?
+
 # https://github.com/sorin-ionescu/prezto#installation
 
 if [[ $0 != /bin/zsh ]]; then
@@ -19,9 +21,7 @@ if [ -d "$XDG_CONFIG_HOME/zsh/.zprezto" ]; then
 fi
 
 # clone preto repository
-git clone \
-    --recursive https://github.com/sorin-ionescu/prezto.git \
-    "${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}/.zprezto"
+git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.config}/zsh/.zprezto
 
 # link prezto files
 setopt EXTENDED_GLOB

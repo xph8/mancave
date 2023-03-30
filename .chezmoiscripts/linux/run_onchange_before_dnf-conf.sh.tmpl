@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# dnf.conf hash: {{ include ".chezmoitemplates/dnf.conf" | sha256sum }}
+
+{{- if eq .chezmoi.os "linux" }}
+cp {{ joinPath .chezmoi.sourceDir ".chezmoitemplates/dnf.conf" }} /etc/dnf/dnf.conf
+{{- end }}

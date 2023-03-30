@@ -20,5 +20,5 @@
     "go.toolsManagement.autoUpdate": true,
     "[python]": {
         "editor.formatOnType": true
-    },
+    }
 }

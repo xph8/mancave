@@ -11,6 +11,11 @@
 chezmoi init --apply https://github.com/xph8/mancave.git
 ```
 
+TODO: 
+- cargo-updates dnf package
+- ssh config for multiple git accounts guide
+- mac settings
+
 * * *
 
 Distro: Fedora

@@ -1,8 +1,9 @@
-dotfiles/
 Brewfile
+Brewfile.lock.json
 README.md
 
 {{ if ne .chezmoi.os "linux" }}
+.config/Code/User/settings.json
 .config/polybar/
 .config/kglobalshortcutsrc
 .local/share/wallpapers
@@ -10,7 +11,4 @@ README.md
 
 {{ if ne .chezmoi.os "darwin" }}
 Library/Application Support/Code/User/settings.json
-{{ end }}
-{{ if ne .chezmoi.os "linux" }}
-.config/Code/User/settings.json
 {{ end }}

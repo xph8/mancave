@@ -53,7 +53,6 @@ brew "golangci-lint"
 brew "rust"
 
 brew "micro"
-brew "nano"
 brew "neovim"
 
 brew "openjdk"
@@ -92,5 +91,9 @@ cask "vnc-viewer"
 cask "figma"
 cask "obsidian"
 cask "xournal-plus-plus"
+
+########################
+# fonts
+########################
 
 cask "font-jetbrains-mono-nerd-font"
