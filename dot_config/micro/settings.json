@@ -1,6 +1,8 @@
 {
-    "tabsize": 4,
     "*.yaml": {
         "tabsize": 2
-    }
+    },
+
+    "status": true,
+    "tabstospaces": true
 }

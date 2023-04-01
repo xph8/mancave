@@ -1,0 +1,53 @@
+#!/bin/sh
+
+{{- if ne .chezmoi.os "linux" }}
+exit 0
+{{- end }}
+
+echo "Installing dnf packages"
+
+declare -a packages=(
+
+    # essential and restricted packages
+    "ca-certificates gnupg"  # certificates
+    "wget curl"  # downloaders
+    "dkms"  # build essentials
+    "unrar zip unzip"  # archivers
+    "tlp"  # laptop power management tool
+    # "akmod-nvidia"  # FIXME drivers
+
+    # development environment
+    "make cmake clang gcc golang rust ruby lua"  # compilers
+    "python python-pip conda"  # python
+    "git gh"  # version control TODO lazygit
+    "ansible"
+
+    # terminal tools
+    "neofetch"
+    "micro neovim"  # editors
+    "ranger"
+    "thefuck"
+    "glances"  # resource monitor
+    "lsd bat"
+
+    # utils
+    "ffmpeg-free"
+    "rsync"
+
+    # desktop
+    "polybar"
+    "rofi"
+)
+
+sudo dnf update
+
+for package in "${packages[@]}"; do
+    sudo dnf install -y $package
+done
+
+
+# setup tmux
+# dnf install tmux
+# git clone https://github.com/tmux-plugins/tpm ~/.config/.tmux/plugins/tpm
+
+# executable permisions to launch.sh chmod +x ~/.config/polybar/launch.sh

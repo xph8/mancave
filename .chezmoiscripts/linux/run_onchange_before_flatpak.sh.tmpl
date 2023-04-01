@@ -4,143 +4,68 @@
 exit 0
 {{- end }}
 
-#########################################
-# setup flatpak
-#########################################
+echo "Installing Flatpak applications"
 
-dnf install flatpak
+declare -a applications=(
+
+    # flatseal
+    "com.github.tchx84.Flatseal"
+    
+    # development software
+    "io.github.shiftey.Desktop"
+    "com.vscodium.codium"
+    "com.jetbrains.PyCharm-Community"
+    "com.getpostman.Postman"
+    # virtual box
+
+    # essentials
+    "com.bitwarden.desktop"
+    "org.mozilla.firefox"
+
+    # communication
+    "flathub org.mozilla.Thunderbird"
+    "com.discordapp.Discord"
+    "im.riot.Riot"
+
+    # media
+    "org.videolan.VLC"
+    "org.kde.krita"
+    "org.audacityteam.Audacity"
+    "fr.handbrake.ghb"
+    "com.obsproject.Studio"
+    "org.kde.kdenlive"
+    "org.libreoffice.LibreOffice"
+
+    # information
+    "md.obsidian.Obsidian"
+    "com.github.xournalpp.xournalpp"
+    "com.calibre_ebook.calibre"
+    "com.sigil_ebook.Sigil"
+
+    # network
+    "me.kozec.syncthingtk"
+    # "com.github.zocker_160.SyncThingy"
+    "org.qbittorrent.qBittorrent"
+    "nz.mega.MEGAsync"
+    # proton vpn
+    "com.github.micahflee.torbrowser-launcher"
+
+    # entertainment
+    "flathub com.spotify.Client"
+    "io.github.hakuneko.HakuNeko"
+
+    # utility
+    "com.usebottles.bottles"
+
+    # games
+    "com.valvesoftware.Steam"
+    "com.mojang.Minecraft"
+    "org.prismlauncher.PrismLauncher"
+)
+
+sudo dnf install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# flatseal
-flatpak install flathub com.github.tchx84.Flatseal
-
-#########################################
-# development software
-#########################################
-
-# github desktop
-flatpak install flathub io.github.shiftey.Desktop
-
-# vscodium
-flatpak install flathub com.vscodium.codium
-
-# pycharm
-# flatpak install flathub com.jetbrains.PyCharm-Community
-
-# postman
-flatpak install flathub com.getpostman.Postman
-
-# virtual box
-
-#########################################
-# essentials
-#########################################
-
-# bitwarden
-flatpak install flathub com.bitwarden.desktop
-
-# firefox
-flatpak install flathub org.mozilla.firefox
-
-#########################################
-# communication
-#########################################
-
-# thunderbird
-flatpak install flathub org.mozilla.Thunderbird
-
-# discord
-flatpak install flathub com.discordapp.Discord
-
-# element
-flatpak install flathub im.riot.Riot
-
-#########################################
-# media
-#########################################
-
-# vlc
-flatpak install flathub org.videolan.VLC
-
-# krita
-flatpak install flathub org.kde.krita
-
-# audacity
-flatpak install flathub org.audacityteam.Audacity
-
-# handbreak
-flatpak install flathub fr.handbrake.ghb
-
-# obs
-flatpak install flathub com.obsproject.Studio
-
-# kdenlive
-flatpak install flathub org.kde.kdenlive
-
-# libreoffice
-flatpak install flathub org.libreoffice.LibreOffice
-
-#########################################
-# information
-#########################################
-
-# obsidian
-flatpak install flathub md.obsidian.Obsidian
-
-# xournal++
-flatpak install flathub com.github.xournalpp.xournalpp
-
-# calibre
-flatpak install flathub com.calibre_ebook.calibre
-
-# sigil
-flatpak install flathub com.sigil_ebook.Sigil
-
-#########################################
-# network
-#########################################
-
-# syncthing
-flatpak install flathub me.kozec.syncthingtk
-# flatpak install flathub com.github.zocker_160.SyncThingy
-
-# qbittorrent
-flatpak install flathub org.qbittorrent.qBittorrents
-
-# mega sync
-flatpak install flathub nz.mega.MEGAsync
-
-# proton vpn
-
-# tor browser
-flatpak install flathub com.github.micahflee.torbrowser-launcher
-
-#########################################
-# # entertainment
-#########################################
-
-# spotify
-flatpak install flathub com.spotify.Client
-
-# haruko
-flatpak install flathub io.github.hakuneko.HakuNeko
-
-#########################################
-# utility
-#########################################
-
-# bottles
-flatpak install flathub com.usebottles.bottles
-
-#########################################
-# games
-#########################################
-
-# steam
-flatpak install flathub com.valvesoftware.Steam
-
-# minecraft launcher
-flatpak install flathub com.mojang.Minecraft
-
-# prism launcher
-flatpak install flathub org.prismlauncher.PrismLauncher
+for application in "${applications[@]}"; do
+    flatpak install -y flathub $application
+done

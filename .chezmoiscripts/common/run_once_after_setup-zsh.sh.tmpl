@@ -2,17 +2,7 @@
 
 exit 0  # FIXME move all zsh files to .config/zsh?
 
-# https://github.com/sorin-ionescu/prezto#installation
-
 if [[ $0 != /bin/zsh ]]; then
-    {{- if eq .chezmoi.os "linux" }}
-    dnf install zsh
-    {{- end }}
-
-    {{- if eq .chezmoi.os "darwin" }}
-    brew install zsh
-    {{- end }}
-
     chsh -s /bin/zsh
 fi
 

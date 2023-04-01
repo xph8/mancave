@@ -1,5 +1,5 @@
 #######################################
-# Prezto and Powerlevel10k
+# prezto and powerlevel10k
 #######################################
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -17,8 +17,9 @@ fi
 # p10k configuration. To customize run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+{{- if eq .chezmoi.os "darwin" }}
 #######################################
-# Autocompletions
+# autocompletions
 #######################################
 
 # k8s
@@ -27,18 +28,19 @@ fi
 # oc
 source <(oc completion zsh)
 
-# kubecuilder
+# kubebuilder
 source <(kubebuilder completion zsh)
+{{- end }}
 
 #######################################
-# Utils
+# utils
 #######################################
 
 # thefuck corrections
 eval $(thefuck --alias)
 
 #######################################
-# Python
+# python
 #######################################
 
 eval "$(pyenv init --path)"
@@ -46,31 +48,37 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 #######################################
-# Aliases
+# aliases
 #######################################
 
-alias c='clear'
-alias e='micro'
+alias c="clear"
+alias e="micro"
 
-alias ls='lsd'
-alias cat='bat'
+alias ls="lsd"
+alias cat="bat"
 
-alias lgit='lazygit'
-alias tf='fuck'
+alias lgit="lazygit"
+alias tf="fuck"
 
+{{- if eq .chezmoi.os "darwin" }}
 # k8s
-alias cri='crictl'
-alias etc='etcdctl'
-alias kc='kubectl'
+alias cri="crictl"
+alias etc="etcdctl"
+alias kc="kubectl"
 
-alias kb='kubebuilder'
-alias mk='minikube'
-alias sw='switch'
+alias kb="kubebuilder"
+alias mk="minikube"
+alias sw="switch"
 INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
+{{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
+function code() {
+  (flatpak run com.vscodium.codium $*)
+}
+
 # youtube-dl
-alias y-dl='noglob youtube-dl'
-alias -g audio='-i --extract-audio --audio-format mp3 --audio-quality 0'
-alias -g audio-playlist='-ic -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0'
+alias y-dl="noglob youtube-dl"
+alias -g audio="-i --extract-audio --audio-format mp3 --audio-quality 0"
+alias -g audio-playlist="-ic -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0"
 {{- end }}

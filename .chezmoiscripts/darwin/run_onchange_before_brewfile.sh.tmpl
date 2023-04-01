@@ -1,7 +1,14 @@
 #!/bin/sh
 
-# Brewfile hash: {{ include "Brewfile" | sha256sum }}
-
-{{- if eq .chezmoi.os "darwin" }}
-brew bundle --file {{ joinPath .chezmoi.sourceDir "Brewfile" }}
+{{- if ne .chezmoi.os "darwin" }}
+exit 0
 {{- end }} 
+
+# install homebrew
+which -s brew
+if [[ $? != 0 ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+brew bundle --file {{ joinPath .chezmoi.sourceDir "Brewfile" }}

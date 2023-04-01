@@ -1,7 +1,12 @@
 #!/bin/sh
 
-# dnf.conf hash: {{ include ".chezmoitemplates/dnf.conf" | sha256sum }}
-
-{{- if eq .chezmoi.os "linux" }}
-cp {{ joinPath .chezmoi.sourceDir ".chezmoitemplates/dnf.conf" }} /etc/dnf/dnf.conf
+{{- if ne .chezmoi.os "linux" }}
+exit 0
 {{- end }}
+
+# dnf.conf hash: {{ include ".chezmoitemplates/dnf.conf" | sha256sum }}
+sudo cp {{ joinPath .chezmoi.sourceDir ".chezmoitemplates/dnf.conf" }} /etc/dnf/dnf.conf
+
+# enable rpm fusion repositories
+sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm

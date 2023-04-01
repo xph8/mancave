@@ -32,6 +32,9 @@ brew "telnet"
 brew "unzip"
 brew "wget"
 
+brew "neofetch"
+brew "onefetch"
+
 brew "cri-tools"
 brew "etcd"
 brew "kubebuilder"
