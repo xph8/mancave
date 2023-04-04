@@ -19,7 +19,8 @@ declare -a packages=(
     # development environment
     "make cmake clang gcc golang rust ruby lua"  # compilers
     "python python-pip conda"  # python
-    "git gh"  # version control TODO lazygit
+    "git gh"  # version control
+    "tmux"
     "ansible"
 
     # terminal tools
@@ -46,8 +47,12 @@ for package in "${packages[@]}"; do
 done
 
 
-# setup tmux
-# dnf install tmux
-# git clone https://github.com/tmux-plugins/tpm ~/.config/.tmux/plugins/tpm
+sudo dnf copr enable -y atim/lazygit
+sudo dnf install -y lazygit
 
-# executable permisions to launch.sh chmod +x ~/.config/polybar/launch.sh
+
+if [ ! -d $XDG_CONFIG_HOME/tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm $XDG_CONFIG_HOME/tmux/plugins/tpm
+fi
+
+# executable permisions to launch.sh chmod +x $XDG_CONFIG_HOME/polybar/launch.sh
