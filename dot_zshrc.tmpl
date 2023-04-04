@@ -43,9 +43,9 @@ eval $(thefuck --alias)
 # python
 #######################################
 
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 #######################################
 # aliases
@@ -78,7 +78,7 @@ function code() {
 }
 
 # youtube-dl
-alias y-dl="noglob youtube-dl"
+alias ytdl="noglob youtube-dl"
 alias -g audio="-i --extract-audio --audio-format mp3 --audio-quality 0"
 alias -g audio-playlist="-ic -o "%(title)s-%(id)s.%(ext)s" --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0"
 {{- end }}

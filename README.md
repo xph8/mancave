@@ -12,6 +12,10 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
+- zprofile file, all env vars
+- fonts
+- micro theme, lsd, bat, rigrep config
+- cowsays
 - ssh config for multiple git accounts guide
 - mac settings
 - Note that '/var/lib/flatpak/exports/share' is not in the search path
