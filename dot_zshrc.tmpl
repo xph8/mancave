@@ -73,6 +73,9 @@ INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
+
 function code() {
   (flatpak run com.vscodium.codium $*)
 }

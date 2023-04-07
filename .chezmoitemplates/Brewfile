@@ -32,6 +32,7 @@ brew "telnet"
 brew "unzip"
 brew "wget"
 
+brew "tldr"
 brew "neofetch"
 brew "onefetch"
 

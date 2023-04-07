@@ -12,7 +12,6 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- zprofile file, all env vars
 - fonts
 - micro theme, lsd, bat, rigrep config
 - cowsays

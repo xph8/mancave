@@ -3,6 +3,7 @@ Brewfile.lock.json
 README.md
 
 {{ if ne .chezmoi.os "linux" }}
+.config/asciiart
 .config/Code/User/settings.json
 .config/polybar/
 .config/kglobalshortcutsrc
