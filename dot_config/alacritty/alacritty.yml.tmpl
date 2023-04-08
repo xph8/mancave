@@ -8,7 +8,12 @@ window:
     y: 5
 
 shell:
+{{- if eq .chezmoi.os "linux" }}
+  program: /usr/bin/tmux
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
   program: /usr/local/bin/tmux
+{{- end }}
   args:  # create or attach a session
     - new-session
     - -A
@@ -16,18 +21,23 @@ shell:
     - main
 
 font:
+{{- if eq .chezmoi.os "linux" }}
+  size: 10
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
   size: 14
+{{- end }}
   normal:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMonoNL Nerd Font
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMonoNL Nerd Font
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMonoNL Nerd Font
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMonoNL Nerd Font
     style: Bold Italic
 
 cursor:

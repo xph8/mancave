@@ -12,15 +12,10 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- fonts
 - micro theme, lsd, bat, rigrep config
-- cowsays
 - ssh config for multiple git accounts guide
 - mac settings
-- Note that '/var/lib/flatpak/exports/share' is not in the search path
-set by the XDG_DATA_HOME and XDG_DATA_DIRS
-environment variables, so applications may not
-be able to find it until you set them.
+- fonts
 
 * * *
 
