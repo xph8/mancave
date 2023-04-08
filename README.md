@@ -12,7 +12,8 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- micro theme, lsd, bat, rigrep config
+- micro config
+- lf file manager
 - ssh config for multiple git accounts guide
 - mac settings
 - fonts
