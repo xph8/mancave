@@ -53,6 +53,9 @@ done
 sudo dnf copr enable -y atim/lazygit
 sudo dnf install -y lazygit
 
+sudo dnf copr enable -y pennbauman/ports
+sudo dnf install -y lf
+
 
 if [ ! -d $HOME/.config/tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm

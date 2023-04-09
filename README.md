@@ -12,8 +12,8 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- micro config
-- lf file manager
+- micro, p10k theme
+- get rid of logout message
 - ssh config for multiple git accounts guide
 - mac settings
 - fonts

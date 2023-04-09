@@ -2,11 +2,11 @@
 # taps
 ########################
 
+tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/bundle"
 
 tap "jesseduffield/lazygit"
 tap "danielfoehrkn/switch"
@@ -23,9 +23,8 @@ brew "tmux"
 brew "rclone"
 
 brew "bat"
-brew "lf"
 brew "lsd"
-brew "ranger"
+brew "lf"
 brew "gnu-tar"
 brew "jq"
 brew "telnet"
