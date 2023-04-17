@@ -5,4 +5,4 @@ kubeconfigStores:
   - kind: filesystem
     kubeconfigName: "config*"
     paths:
-      - ~/.kube/config
+      - ~/.kube/switch-config

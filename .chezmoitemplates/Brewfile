@@ -78,7 +78,7 @@ cask "visual-studio-code"
 cask "miniconda"
 
 cask "alacritty"
-cask "docker"
+cask "rancher"
 cask "github"
 
 # cask "firefox"
