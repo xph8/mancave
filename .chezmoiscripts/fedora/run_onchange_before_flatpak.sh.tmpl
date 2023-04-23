@@ -43,8 +43,7 @@ declare -a applications=(
     "com.sigil_ebook.Sigil"
 
     # network
-    "me.kozec.syncthingtk"
-    # "com.github.zocker_160.SyncThingy"
+    "com.github.zocker_160.SyncThingy"
     "org.qbittorrent.qBittorrent"
     "nz.mega.MEGAsync"
     # proton vpn
@@ -63,7 +62,7 @@ declare -a applications=(
     "org.prismlauncher.PrismLauncher"
 )
 
-sudo dnf install flatpak
+sudo dnf install -y flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 for application in "${applications[@]}"; do
