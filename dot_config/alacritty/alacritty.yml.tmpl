@@ -10,8 +10,7 @@ window:
 shell:
 {{- if eq .chezmoi.os "linux" }}
   program: /usr/bin/tmux
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
+{{- else if eq .chezmoi.os "darwin" }}
   program: /usr/local/bin/tmux
 {{- end }}
   args:  # create or attach a session
@@ -23,8 +22,7 @@ shell:
 font:
 {{- if eq .chezmoi.os "linux" }}
   size: 10
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
+{{- else if eq .chezmoi.os "darwin" }}
   size: 14
 {{- end }}
   normal:

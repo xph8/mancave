@@ -2,6 +2,9 @@ Brewfile
 Brewfile.lock.json
 README.md
 
+{{/* temporarily ignore */}}
+.config/kglobalshortcutsrc
+
 {{ if ne .chezmoi.os "linux" }}
 .config/asciiart
 .config/Code/User/settings.json

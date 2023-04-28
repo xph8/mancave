@@ -35,10 +35,12 @@
     grep = auto
     ui = auto
 
-[credentials]
 {{- if eq .chezmoi.os "linux" }}
+[credential "https://github.com"]
     helper = !/usr/bin/gh auth git-credential
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
+[credential "https://gist.github.com"]
+    helper = !/usr/bin/gh auth git-credential
+{{- else if eq .chezmoi.os "darwin" }}
+[credentials]
     helper = osxkeychain
 {{- end }}

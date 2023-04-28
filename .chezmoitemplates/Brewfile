@@ -8,8 +8,9 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
-tap "jesseduffield/lazygit"
 tap "danielfoehrkn/switch"
+tap "jesseduffield/lazygit"
+tap "go-task/tap"
 
 ########################
 # brew
@@ -31,6 +32,8 @@ brew "jq"
 brew "telnet"
 brew "unzip"
 brew "wget"
+brew "httpie"
+brew "go-task/tap/go-task"
 
 brew "tldr"
 brew "neofetch"

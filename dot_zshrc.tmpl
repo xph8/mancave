@@ -42,6 +42,10 @@ eval "$(pyenv virtualenv-init -)"
 # thefuck corrections
 eval $(thefuck --alias)
 
+# taskfile
+autoload -U compinit
+compinit -i
+
 #######################################
 # lf file manager
 #######################################
@@ -87,6 +91,11 @@ alias cat="bat"
 
 alias lgit="lazygit"
 alias tf="fuck"
+{{- if eq .chezmoi.os "linux" }}
+alias tg="go-task --global"
+{{- else if eq .chezmoi.os "darwin" }}
+alias tg="task --global"
+{{- end }}
 
 {{ if eq .chezmoi.os "darwin" }}
 # k8s
