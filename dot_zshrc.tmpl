@@ -98,6 +98,8 @@ alias kb="kubebuilder"
 alias mk="minikube"
 alias sw="switch"
 INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
+
+alias -g dn="config set-context --current --namespace"
 {{- end }}
 
 {{ if eq .chezmoi.os "linux" }}

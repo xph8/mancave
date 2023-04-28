@@ -24,6 +24,7 @@ brew "rclone"
 
 brew "bat"
 brew "lsd"
+brew "tree"
 brew "lf"
 brew "gnu-tar"
 brew "jq"
@@ -46,6 +47,7 @@ brew "openshift-cli"
 brew "danielfoehrkn/switch/switch"
 
 brew "git"
+brew "git-delta"
 brew "jesseduffield/lazygit/lazygit"
 
 brew "pyenv"

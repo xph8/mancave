@@ -1,19 +1,32 @@
 [user]
     name = {{ .data.username }}
     email = {{ .data.email }}
-[init]
-    defaultBranch = master
+
 [core]
     editor = micro
+    pager = delta
     ignorecase = false
     excludesfile = ~/.gitignore_global
-[credentials]
-{{- if eq .chezmoi.os "linux" }}
-    helper = !/usr/bin/gh auth git-credential
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
-    helper = osxkeychain
-{{- end }}
+
+[init]
+    defaultBranch = master
+
+[diff]
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    true-color = always
+    theme = Nord
+    light = false
+    navigate = true
+    line-numbers = true
+
 [color]
     status = auto
     diff = auto
@@ -21,3 +34,11 @@
     interactive = auto
     grep = auto
     ui = auto
+
+[credentials]
+{{- if eq .chezmoi.os "linux" }}
+    helper = !/usr/bin/gh auth git-credential
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+    helper = osxkeychain
+{{- end }}
