@@ -35,9 +35,10 @@ declare -a packages=(
     "jq"  # json processor
     "xclip"  # clipboard
     "go-task"
+    "mpd mpc ncmpcpp"  # media
 
     # utils
-    "youtube-dl ffmpeg-free"
+    "youtube-dl ffmpeg"
     "rsync"
     "fdupes"
 
@@ -46,7 +47,7 @@ declare -a packages=(
     "rofi"
 )
 
-sudo dnf update -y
+sudo dnf upgrade --refresh -y
 
 for package in "${packages[@]}"; do
     sudo dnf install -y $package

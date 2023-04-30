@@ -1,5 +1,9 @@
 window:
-  title: terminal
+{{- if eq .chezmoi.os "linux" }}
+  title: mancave
+{{- else if eq .chezmoi.os "darwin" }}
+  title: workstation
+{{- end }}
   dimensions:
     columns: 150
     lines: 30

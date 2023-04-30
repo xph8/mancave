@@ -6,8 +6,10 @@ README.md
 .config/kglobalshortcutsrc
 
 {{ if ne .chezmoi.os "linux" }}
-.config/asciiart
+.config/asciisay
 .config/Code/User/settings.json
+.config/mpd/
+.config/ncmpcpp/
 .config/polybar/
 .config/kglobalshortcutsrc
 .local/share/wallpapers

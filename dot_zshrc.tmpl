@@ -115,6 +115,10 @@ alias -g dn="config set-context --current --namespace"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
 
+# audio
+alias cava="TERM=st-256color cava"
+alias ncp="ncmpcpp"
+
 function code() {
   (flatpak run com.vscodium.codium $*)
 }
