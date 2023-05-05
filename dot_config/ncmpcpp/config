@@ -96,14 +96,14 @@ visualizer_in_stereo = yes
 ##
 visualizer_type = spectrum
 
-#visualizer_fps = 60
-#
-#visualizer_autoscale = no
+visualizer_fps = 60
+
+visualizer_autoscale = no
 
 visualizer_look = ●▮
 
-#visualizer_color = blue, cyan, green, yellow, magenta, red
-#
+visualizer_color = blue, cyan, green, yellow, magenta, red
+
 ## Alternative subset of 256 colors for terminals that support it.
 ##
 #visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
@@ -117,7 +117,7 @@ visualizer_look = ●▮
 ## and visualizer_in_stereo set, artifacts may be visible on the bottom half of
 ## the visualization.
 
-visualizer_spectrum_smooth_look = yes
+visualizer_spectrum_smooth_look = no
 
 ## A value between 1 and 5 inclusive. Specifying a larger value makes the
 ## visualizer look at a larger slice of time, which results in less jumpy
@@ -234,22 +234,22 @@ visualizer_spectrum_smooth_look = yes
 #
 #song_library_format = {%n - }{%t}|{%f}
 
-alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_first_line_format = {$b$1$aqqu$/a$9} {%t}|{%f} {$1$atqq$/a$9$/b}
 
 #alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-#
-#current_item_prefix = $(yellow)$r
-#
-#current_item_suffix = $/r$(end)
-#
+
+current_item_prefix = $(red)>
+
+current_item_suffix = $(red)<
+
 #current_item_inactive_column_prefix = $(white)$r
 #
 #current_item_inactive_column_suffix = $/r$(end)
-#
-#now_playing_prefix = $b
-#
-#now_playing_suffix = $/b
-#
+
+now_playing_prefix = "$b "
+
+now_playing_suffix = $/b
+
 #browser_playlist_prefix = "$2playlist$9 "
 #
 #selected_item_prefix = $6
@@ -307,9 +307,9 @@ alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 ##   display artist tag and then composer and performer if previous ones are not
 ##   available.
 ##
-#
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-#
+
+song_columns_list_format = (6f)[red]{NE} (40)[white]{t|f:Title} (20)[blue]{a} (20)[green]{b} (8f)[blue]{y} (7f)[magenta]{l}
+
 ##### various settings #####
 #
 ##
@@ -349,9 +349,9 @@ playlist_editor_display_mode = columns
 #incremental_seeking = yes
 #
 #seek_time = 1
-#
-#volume_change_step = 2
-#
+
+volume_change_step = 1
+
 #autocenter_mode = no
 #
 #centered_cursor = no
@@ -360,7 +360,7 @@ playlist_editor_display_mode = columns
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = "─╼ "
+progressbar_look = "─╼─"
 
 ## Available values: database, playlist.
 ##
@@ -385,18 +385,18 @@ user_interface = alternative
 #default_find_mode = wrapped
 #
 #default_tag_editor_pattern = %n - %t
-#
-#header_visibility = yes
-#
+
+header_visibility = no
+
 #statusbar_visibility = yes
 #
 ## Show the "Connected to ..." message on startup
 #connected_message_on_startup = yes
-#
-#titles_visibility = yes
-#
-#header_text_scrolling = yes
-#
+
+titles_visibility = no
+
+header_text_scrolling = no
+
 #cyclic_scrolling = no
 #
 #lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
@@ -404,11 +404,11 @@ user_interface = alternative
 #follow_now_playing_lyrics = no
 #
 #fetch_lyrics_for_current_song_in_background = no
-#
-#store_lyrics_in_song_dir = no
-#
-#generate_win32_compatible_filenames = yes
-#
+
+store_lyrics_in_song_dir = yes
+
+generate_win32_compatible_filenames = no
+
 #allow_for_physical_item_deletion = no
 #
 ##
@@ -445,8 +445,8 @@ user_interface = alternative
 ## Note: You can define startup slave screen by choosing screen from the list
 ## above or an empty value for no slave screen.
 ##
-#startup_slave_screen = ""
-#
+startup_slave_screen = visualizer
+
 #startup_slave_screen_focus = no
 #
 ##
@@ -533,9 +533,9 @@ user_interface = alternative
 ##
 #
 #search_engine_default_search_mode = 1
-#
-#external_editor = nano
-#
+
+external_editor = micro
+
 ## Note: set to yes if external editor is a console application.
 ##
 #use_console_editor = yes
@@ -569,31 +569,31 @@ user_interface = alternative
 ## Note: due to technical limitations of older ncurses version, if 256 colors
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
-#
+
 colors_enabled = yes
 
 #empty_tag_color = cyan
-#
-#header_window_color = default
-#
+
+header_window_color = default
+
 #volume_color = default
 #
 #state_line_color = default
 #
 #state_flags_color = default:b
-#
-#main_window_color = yellow
-#
-#color1 = white
-#
-#color2 = green
-#
-#progressbar_color = black:b
-#
-#progressbar_elapsed_color = green:b
-#
-#statusbar_color = default
-#
+
+main_window_color = blue
+
+color1 = white
+
+color2 = green
+
+progressbar_color = black
+
+progressbar_elapsed_color = magenta
+
+statusbar_color = yellow
+
 #statusbar_time_color = default:b
 #
 #player_state_color = default:b
