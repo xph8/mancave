@@ -12,8 +12,9 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- micro theme
-- get rid of logout message
+- sort package lists
+- fix terminal image viewer
+- `systemctl --user enable mpd`
 - invoke zprezto-update from topgrade
 - colour scheme
 - ssh config for multiple git accounts guide

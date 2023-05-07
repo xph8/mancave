@@ -92,6 +92,7 @@ alias cat="bat"
 alias lgit="lazygit"
 alias tf="fuck"
 {{- if eq .chezmoi.os "linux" }}
+alias task="go-task"
 alias tg="go-task --global"
 {{- else if eq .chezmoi.os "darwin" }}
 alias tg="task --global"

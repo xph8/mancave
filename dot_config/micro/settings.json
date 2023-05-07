@@ -2,6 +2,7 @@
     "*.yaml": {
         "tabsize": 2
     },
+    "colorscheme": "twilight",
     "status": true,
     "tabstospaces": true
 }
