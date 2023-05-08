@@ -1,5 +1,8 @@
 version: "3"
 
+vars:
+  YTDL_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
+
 tasks:
   venv:
     dir: {{"\"{{.USER_WORKING_DIR}}\""}}
@@ -11,7 +14,15 @@ tasks:
     cmds:
       - source ./venv/bin/activate
 
-{{- if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux" }}
+  ytdl-audio:
+    cmds:
+      - youtube-dl {{"{{.YTDL_OPTIONS}}"}} {{"{{.CLI_ARGS}}"}}
+
+  ytdl-audio-playlist:
+    cmds:
+      - youtube-dl {{"{{.YTDL_OPTIONS}}"}} --yes-playlist -o \"%(title)s-%(id)s.%(ext)s\" {{"{{.CLI_ARGS}}"}}
+
   dupes:
     dir: {{"\"{{.USER_WORKING_DIR}}\""}}
     cmds:

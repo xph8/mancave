@@ -1,0 +1,44 @@
+alias c="clear"
+alias e="micro"
+
+alias ls="lsd"
+alias cat="bat"
+
+alias lgit="lazygit"
+alias tf="fuck"
+
+{{- if eq .chezmoi.os "linux" }}
+alias task="go-task"
+alias tg="go-task --global"
+{{- else if eq .chezmoi.os "darwin" }}
+alias tg="task --global"
+{{- end }}
+
+{{ if eq .chezmoi.os "darwin" }}
+# k8s
+alias cri="crictl"
+alias etc="etcdctl"
+alias kc="kubectl"
+
+alias kb="kubebuilder"
+alias mk="minikube"
+alias sw="switch"
+INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
+
+alias -g dn="config set-context --current --namespace"
+{{- end }}
+
+{{ if eq .chezmoi.os "linux" }}
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
+
+# audio
+alias cava="TERM=st-256color cava"
+alias ncp="ncmpcpp"
+
+function code() {
+  (flatpak run com.vscodium.codium $*)
+}
+
+alias ytdl="noglob youtube-dl"
+{{- end }}

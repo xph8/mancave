@@ -4,15 +4,17 @@ if [[ $SHELL != *zsh ]]; then
     chsh -s /bin/zsh
 fi
 
-if [ -d "$HOME/.zprezto" ]; then
+export ZDOTDIR="$HOME/.config/zsh"
+
+if [ -d "$ZDOTDIR/.zprezto" ]; then
     exit 0  # prezto is already installed
 fi
 
 # clone preto repository
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "$ZDOTDIR/.zprezto"
 
 # link prezto files
 setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+for rcfile in "$ZDOTDIR"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "$ZDOTDIR/.${rcfile:t}"
 done
