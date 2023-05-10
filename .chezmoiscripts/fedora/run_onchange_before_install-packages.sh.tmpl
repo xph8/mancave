@@ -17,8 +17,8 @@ declare -a packages=(
     # "akmod-nvidia"  # FIXME drivers
 
     # development environment
-    "make cmake clang gcc golang rust ruby lua"  # compilers
-    "python python-pip conda"  # python
+    "clang gcc"  # compilers
+    "conda"  # python
     "git gh git-delta"  # version control
     "tmux"
     "httpie"
@@ -32,10 +32,10 @@ declare -a packages=(
     "ranger"
     "thefuck"
     "glances"  # resource monitor
-    "lsd bat ripgrep fd fzf"
+    "lsd bat ripgrep fd-find fzf"
     "jq"  # json processor
     "xclip"  # clipboard
-    "go-task"
+    "make cmake go-task"
     "mpd mpc ncmpcpp beets"  # media
     "zathura zathura-plugins-all zathura-zsh-completion"  # document viewer
     "pandoc"
@@ -60,16 +60,9 @@ for package in "${packages[@]}"; do
     sudo dnf install -y $package
 done
 
-
+# copr
 sudo dnf copr enable -y atim/lazygit
 sudo dnf install -y lazygit
 
 sudo dnf copr enable -y pennbauman/ports
 sudo dnf install -y lf
-
-
-if [ ! -d $HOME/.config/tmux/plugins/tpm ]; then
-    git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
-fi
-
-# executable permisions to launch.sh chmod +x $HOME/.config/polybar/launch.sh

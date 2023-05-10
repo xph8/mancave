@@ -23,31 +23,12 @@ for conf in "$ZDOTDIR"/config.d/**/*.zsh; do
 done
 unset conf
 
-{{ if eq .chezmoi.os "darwin" }}
-#######################################
-# autocompletions
-#######################################
-
-source <(kubectl completion zsh)
-source <(oc completion zsh)
-source <(kubebuilder completion zsh)
-
-#######################################
-# python
-#######################################
-
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-{{- end }}
-
 #######################################
 # utils
 #######################################
 
+# activate asdf version manager
+source ~/.config/asdf/asdf.sh
+
 # thefuck corrections
 eval $(thefuck --alias)
-
-# taskfile
-autoload -U compinit
-compinit -i

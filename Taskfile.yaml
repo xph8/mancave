@@ -5,16 +5,15 @@ vars:
 
 tasks:
   venv:
-    dir: {{"\"{{.USER_WORKING_DIR}}\""}}
+    dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - python -m venv venv
 
   svenv:
-    dir: {{"\"{{.USER_WORKING_DIR}}\""}}
+    dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - source ./venv/bin/activate
 
-{{ if eq .chezmoi.os "linux" }}
   ytdl-audio:
     cmds:
       - youtube-dl {{"{{.YTDL_OPTIONS}}"}} {{"{{.CLI_ARGS}}"}}
@@ -24,12 +23,11 @@ tasks:
       - youtube-dl {{"{{.YTDL_OPTIONS}}"}} --yes-playlist -o \"%(title)s-%(id)s.%(ext)s\" {{"{{.CLI_ARGS}}"}}
 
   dupes:
-    dir: {{"\"{{.USER_WORKING_DIR}}\""}}
+    dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - fdupes -r .
 
   audio-meta:
-    dir: {{"\"{{.USER_WORKING_DIR}}\""}}
+    dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - beet import .
-{{ end }}

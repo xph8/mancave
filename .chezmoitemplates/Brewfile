@@ -58,9 +58,6 @@ brew "git"
 brew "git-delta"
 brew "jesseduffield/lazygit/lazygit"
 
-brew "pyenv"
-brew "pyenv-virtualenv"
-
 brew "go-bindata"
 brew "golangci-lint"
 brew "rust"

@@ -25,7 +25,7 @@ display_preamble = false
 
 # Custom commands
 [commands]
-#"Prezto Update" = "~/.zprezto/init.zsh zprezto-update"
+#"Prezto Update" = "$HOME/.config/zsh/.zprezto/init.zsh zprezto-update"
 
 # Causes Topgrade to rename itself during the run to allow package managers
 # to upgrade it. Use this only if you installed Topgrade by using a package
