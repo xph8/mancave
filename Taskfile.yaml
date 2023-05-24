@@ -4,28 +4,19 @@ vars:
   YTDL_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
 
 tasks:
-  venv:
-    dir: "{{.USER_WORKING_DIR}}"
-    cmds:
-      - python -m venv venv
-
-  svenv:
-    dir: "{{.USER_WORKING_DIR}}"
-    cmds:
-      - source ./venv/bin/activate
-
-  ytdl-audio:
-    cmds:
-      - youtube-dl {{"{{.YTDL_OPTIONS}}"}} {{"{{.CLI_ARGS}}"}}
-
-  ytdl-audio-playlist:
-    cmds:
-      - youtube-dl {{"{{.YTDL_OPTIONS}}"}} --yes-playlist -o \"%(title)s-%(id)s.%(ext)s\" {{"{{.CLI_ARGS}}"}}
 
   dupes:
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - fdupes -r .
+
+  dl-audio:  # invoke: tg dl-audio -- url
+    cmds:
+      - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
+
+  dl-audio-list:
+    cmds:
+      - yt-dlp {{.YTDL_OPTIONS}} --yes-playlist -o "%(title)s-%(id)s.%(ext)s" {{.CLI_ARGS}}
 
   audio-meta:
     dir: "{{.USER_WORKING_DIR}}"
