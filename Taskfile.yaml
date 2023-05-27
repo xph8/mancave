@@ -1,22 +1,33 @@
 version: "3"
 
 vars:
-  YTDL_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
+  YTDL_AUDIO_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
 
-tasks:
+tasks:  # invoke: tg task -- args
 
-  dupes:
+  archive:
+    dir: "~/DSU"
+    cmds:
+      - tar -cvf {{.CLI_ARGS}}.tar.gz {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
+      - rm -r -I {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
+
+  lib:
+    dir: "~/.local/share/services"
+    cmds:
+      - docker compose -f calibre-web.yaml {{.CLI_ARGS}}
+
+  clean:
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - fdupes -r .
 
-  dl-audio:  # invoke: tg dl-audio -- url
+  dl-audio:
     cmds:
-      - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
+      - yt-dlp {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio-list:
     cmds:
-      - yt-dlp {{.YTDL_OPTIONS}} --yes-playlist -o "%(title)s-%(id)s.%(ext)s" {{.CLI_ARGS}}
+      - yt-dlp {{.YTDL_AUDIO_OPTIONS}} --yes-playlist -o "%(title)s-%(id)s.%(ext)s" {{.CLI_ARGS}}
 
   audio-meta:
     dir: "{{.USER_WORKING_DIR}}"

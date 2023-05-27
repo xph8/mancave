@@ -12,6 +12,7 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
+- fix paths
 - chezmoi external
 - sort package lists
 - fix terminal image viewer
@@ -30,16 +31,6 @@ Desktop Enviournment: KDE Plasma
 
 Application Style: Klassy
 
-Bar: Polybar
-
-Launcher: Rofi
-
-* * *
-
-Terminal: Alacritty
-
-Shell: zsh
-
 * * *
 
 Typography:
@@ -51,27 +42,6 @@ Typography:
 * * *
 
 Colour Scheme: Dantalian Nordic
-
-```yaml
-terminal:
-  background: '#131517'  # black
-  foreground: '#dadada'  # white
-
-primary:
-  black:       '#131517'
-  white:       '#c0c0c0'
-  cyan-light:  '#8f9fb4'
-  cyan-dark:   '#81a1c1'
-  cyan-darker: '#4d6477'
-  green-light: '#a7b594'
-  red:         '#bf616a'
-
-secondary:
-  background:        '#1e1e1e' '#1c1c1c'
-  foreground:        '#52565f' '#585858'
-  background-bright: '#131517'
-  foreground-bright: '#c0c0c0' '#bcbcbc'
-```
 
 * * *
 

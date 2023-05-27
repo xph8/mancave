@@ -12,7 +12,7 @@ README.md
 .config/ncmpcpp/
 .config/polybar/
 .config/kglobalshortcutsrc
-.local/share/wallpapers
+.local/
 Taskfile.yaml
 {{ end }}
 
