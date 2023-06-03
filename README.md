@@ -12,8 +12,8 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- fix paths
-- chezmoi external
+- fix paths, includeTemplate
+- fonts
 - sort package lists
 - fix terminal image viewer
 - `systemctl --user enable mpd`
@@ -21,7 +21,7 @@ TODO:
 - colour scheme
 - ssh config for multiple git accounts guide
 - mac settings
-- fonts
+- firefox dotfiles https://github.com/twpayne/chezmoi/issues/1226
 
 * * *
 

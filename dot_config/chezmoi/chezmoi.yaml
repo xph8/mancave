@@ -1,0 +1,8 @@
+edit:
+  command: micro
+
+diff:
+  command: delta
+
+format: yaml
+progress: true
