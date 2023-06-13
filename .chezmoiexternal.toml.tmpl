@@ -2,7 +2,7 @@
   type = "git-repo"
   url = "https://github.com/asdf-vm/asdf.git"
   [".config/asdf".clone]  # clone latest tag
-    args = ["--branch", "{{ output "sh" "-c" "git ls-remote --tags --sort v:refname https://github.com/asdf-vm/asdf.git | tail --lines 1 | awk '{print $2}' | cut -d / -f 3" | trim }}"]
+    args = ["--branch", "{{ output "sh" "-c" "git ls-remote --tags --refs --sort v:refname https://github.com/asdf-vm/asdf.git | tail --lines 1 | awk '{print $2}' | cut -d / -f 3" | trim }}"]
   [".config/asdf".pull]  # updates are handled by topgrade
     args = ["--dry-run"]
 
@@ -15,3 +15,10 @@
   url = "https://github.com/sorin-ionescu/prezto.git"
   [".config/zsh/.zprezto".clone]
     args = ["--recursive"]
+
+[".local/share/fonts/ttf/JetBrainsMonoNLNerdFont"]
+  type = "archive"
+  url = "https://github.com/ryanoasis/nerd-fonts/releases/download/{{ output "sh" "-c" "git ls-remote --tags --refs --sort v:refname https://github.com/ryanoasis/nerd-fonts.git | tail --lines 1 | awk '{print $2}' | cut -d / -f 3" | trim }}/JetBrainsMono.zip"
+  extract = true
+  include = ["JetBrainsMonoNLNerdFont*.ttf"]
+  refreshPeriod = "720h"

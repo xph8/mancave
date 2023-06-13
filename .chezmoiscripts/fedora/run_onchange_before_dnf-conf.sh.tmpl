@@ -4,7 +4,7 @@
 exit 0
 {{- end }}
 
-# dnf.conf hash: {{ include ".chezmoitemplates/dnf.conf" | sha256sum }}
+# dnf.conf hash: {{ includeTemplate "dnf.conf" | sha256sum }}
 sudo cp {{ joinPath .chezmoi.sourceDir ".chezmoitemplates/dnf.conf" }} /etc/dnf/dnf.conf
 
 # enable rpm fusion repositories

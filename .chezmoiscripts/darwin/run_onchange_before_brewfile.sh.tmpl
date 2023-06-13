@@ -10,5 +10,5 @@ if [[ $? != 0 ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Brewfile hash: {{ include ".chezmoitemplates/Brewfile" | sha256sum }}
+# Brewfile hash: {{ includeTemplate "Brewfile" | sha256sum }}
 brew bundle --file {{ joinPath .chezmoi.sourceDir ".chezmoitemplates/Brewfile" }}

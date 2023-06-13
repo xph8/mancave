@@ -12,8 +12,6 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- fix paths, includeTemplate
-- fonts
 - sort package lists
 - fix terminal image viewer
 - `systemctl --user enable mpd`
