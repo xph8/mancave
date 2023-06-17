@@ -1,3 +1,4 @@
+[misc]
 assume_yes = true
 
 # disable specific steps
@@ -18,7 +19,6 @@ display_time = true
 # cleanup = true
 
 skip_notify = true
-display_preamble = false
 
 [composer]
 # self_update = true

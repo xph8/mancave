@@ -16,6 +16,12 @@
   [".config/zsh/.zprezto".clone]
     args = ["--recursive"]
 
+[".config/nvim"]
+  type = "git-repo"
+  url = "https://github.com/AstroNvim/AstroNvim"
+  [".config/nvim".clone]
+    args = ["--depth", "1"]
+
 [".local/share/fonts/ttf/JetBrainsMonoNLNerdFont"]
   type = "archive"
   url = "https://github.com/ryanoasis/nerd-fonts/releases/download/{{ output "sh" "-c" "git ls-remote --tags --refs --sort v:refname https://github.com/ryanoasis/nerd-fonts.git | tail --lines 1 | awk '{print $2}' | cut -d / -f 3" | trim }}/JetBrainsMono.zip"

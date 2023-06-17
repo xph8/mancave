@@ -3,6 +3,6 @@ version: v1alpha1
 showPreview: false
 kubeconfigStores:
   - kind: filesystem
-    kubeconfigName: "config*"
+    kubeconfigName: "*"
     paths:
-      - ~/.kube/switch-config
+      - ~/.kube/config.d
