@@ -14,7 +14,7 @@ tasks:  # invoke: tg task -- args
   lib:
     dir: "~/.local/share/services"
     cmds:
-      - docker compose -f calibre-web.yaml {{.CLI_ARGS}}
+      - podman-compose -f calibre-web.yaml {{.CLI_ARGS}}
 
   clean:
     dir: "{{.USER_WORKING_DIR}}"
