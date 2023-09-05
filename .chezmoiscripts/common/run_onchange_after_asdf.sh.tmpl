@@ -3,7 +3,6 @@
 # explicitly enable asdf for first install
 source ~/.config/asdf/asdf.sh
 
-# FIXME lazygit
 declare -a plugins=(
     "python"
     "golang"
@@ -20,6 +19,9 @@ declare -a plugins=(
     "kubebuilder"
     "kubectl"
     "kustomize"
+
+    "chezmoi"
+    "lazygit"
 )
 
 function asdf_plugin_add {

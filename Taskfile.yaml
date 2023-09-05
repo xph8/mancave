@@ -1,6 +1,7 @@
 version: "3"
 
 vars:
+  YTDL_OPTIONS: -P $HOME/Downloads
   YTDL_AUDIO_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
 
 tasks:  # invoke: tg task -- args
@@ -21,13 +22,17 @@ tasks:  # invoke: tg task -- args
     cmds:
       - fdupes -r .
 
+  dl:
+    cmds:
+      - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
+
   dl-audio:
     cmds:
-      - yt-dlp {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
+      - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio-list:
     cmds:
-      - yt-dlp {{.YTDL_AUDIO_OPTIONS}} --yes-playlist -o "%(title)s-%(id)s.%(ext)s" {{.CLI_ARGS}}
+      - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} --yes-playlist -o "%(title)s-%(id)s.%(ext)s" {{.CLI_ARGS}}
 
   audio-meta:
     dir: "{{.USER_WORKING_DIR}}"

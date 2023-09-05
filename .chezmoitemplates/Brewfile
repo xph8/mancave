@@ -3,10 +3,8 @@
 ########################
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 
 tap "danielfoehrkn/switch"
 tap "jesseduffield/lazygit"
@@ -18,7 +16,6 @@ tap "zegervdv/zathura"
 ########################
 
 brew "ansible"
-brew "chezmoi"
 brew "topgrade"
 brew "thefuck"
 brew "tmux"
@@ -33,11 +30,14 @@ brew "fd"
 brew "fzf"
 brew "gnu-tar"
 brew "jq"
-brew "telnet"
 brew "unzip"
-brew "wget"
-brew "httpie"
 brew "go-task/tap/go-task"
+brew "btop"
+brew "lnav"
+
+brew "wget"
+brew "telnet"
+brew "httpie"
 
 brew "tldr"
 brew "hyperfine"
@@ -52,7 +52,6 @@ brew "danielfoehrkn/switch/switch"
 
 brew "git"
 brew "git-delta"
-brew "jesseduffield/lazygit/lazygit"
 
 brew "go-bindata"
 brew "golangci-lint"
@@ -64,7 +63,6 @@ brew "zathura-pdf-poppler"
 brew "pandoc"
 
 brew "openjdk"
-brew "rabbitmq"
 
 brew "bash"
 brew "zsh"
@@ -94,9 +92,7 @@ cask "mongodb-compass"
 cask "karabiner-elements"
 cask "oracle-jdk"
 cask "postman"
-cask "vnc-viewer"
 
-cask "figma"
 cask "xournal-plus-plus"
 
 ########################

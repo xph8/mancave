@@ -14,7 +14,6 @@ declare -a packages=(
     "dkms"  # build essentials
     "unrar zip unzip"  # archivers
     "tlp"  # laptop power management tool
-    # "akmod-nvidia"  # FIXME drivers
 
     # development environment
     "clang gcc"  # compilers
@@ -31,7 +30,7 @@ declare -a packages=(
     "micro neovim"  # editors
     "ranger"
     "thefuck"
-    "glances"  # resource monitor
+    "glances btop"  # resource monitors
     "lsd bat ripgrep fd-find fzf"
     "jq"  # json processor
     "xclip"  # clipboard
@@ -40,6 +39,7 @@ declare -a packages=(
     "zathura zathura-plugins-all zathura-zsh-completion"  # document viewer
     "pandoc"
     "hyperfine"  # benchmark
+    "lnav"  # log navigator
 
     # utils
     "yt-dlp ffmpeg"
@@ -52,6 +52,10 @@ declare -a packages=(
     # desktop
     "polybar"
     "rofi"
+
+    # rpm fusion packages
+    "steam-devices"
+    # "akmod-nvidia"  # FIXME drivers
 )
 
 sudo dnf upgrade --refresh -y
@@ -60,9 +64,7 @@ for package in "${packages[@]}"; do
     sudo dnf install -y $package
 done
 
-# copr
-sudo dnf copr enable -y atim/lazygit
-sudo dnf install -y lazygit
+# copr repositories
 
 sudo dnf copr enable -y pennbauman/ports
 sudo dnf install -y lf
