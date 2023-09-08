@@ -1,22 +1,27 @@
+{{/* default values */}}
+{{- $title := "mancave" -}}
+{{- $columns := 170 -}}
+{{- $size := 11 -}}
+{{- $program := "/usr/bin/tmux" -}}
+
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $title = "workstation" -}}
+{{-   $columns = 150 -}}
+{{-   $size = 14 -}}
+{{-   $program = "/usr/local/bin/tmux" -}}
+{{- end -}}
+
 window:
-{{- if eq .chezmoi.os "linux" }}
-  title: mancave
-{{- else if eq .chezmoi.os "darwin" }}
-  title: workstation
-{{- end }}
+  title: {{ $title }}
   dimensions:
-    columns: 150
+    columns: {{ $columns }}
     lines: 30
   padding:
     x: 5
     y: 5
 
 shell:
-{{- if eq .chezmoi.os "linux" }}
-  program: /usr/bin/tmux
-{{- else if eq .chezmoi.os "darwin" }}
-  program: /usr/local/bin/tmux
-{{- end }}
+  program: {{ $program }}
   args:  # create or attach a session
     - new-session
     - -A
@@ -24,11 +29,7 @@ shell:
     - main
 
 font:
-{{- if eq .chezmoi.os "linux" }}
-  size: 10
-{{- else if eq .chezmoi.os "darwin" }}
-  size: 14
-{{- end }}
+  size: {{ $size }}
   normal:
     family: JetBrainsMonoNL Nerd Font
     style: Regular

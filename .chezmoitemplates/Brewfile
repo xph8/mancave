@@ -7,7 +7,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 tap "danielfoehrkn/switch"
-tap "jesseduffield/lazygit"
 tap "go-task/tap"
 tap "zegervdv/zathura"
 

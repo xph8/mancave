@@ -2,16 +2,12 @@ Brewfile
 Brewfile.lock.json
 README.md
 
-{{/* temporarily ignore */}}
-.config/kglobalshortcutsrc
-
 {{ if ne .chezmoi.os "linux" }}
 .config/asciisay
 .config/Code/User/settings.json
 .config/mpd/
 .config/ncmpcpp/
 .config/polybar/
-.config/kglobalshortcutsrc
 .local/
 Taskfile.yaml
 {{ end }}

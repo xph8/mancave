@@ -12,8 +12,10 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
+- powerline symbols
+- stored playlists enable
 - `systemctl --user enable mpd`
-- invoke zprezto-update from topgrade
+- chagne location of Downloads, Pictures and other default folders
 - colour scheme
 - ssh config for multiple git accounts guide
 - mac settings
@@ -24,8 +26,6 @@ TODO:
 Distro: Fedora
 
 Desktop Enviournment: KDE Plasma
-
-Application Style: Klassy
 
 * * *
 
@@ -38,9 +38,5 @@ Typography:
 * * *
 
 Colour Scheme: Dantalian Nordic
-
-* * *
-
-Chezmoi setup
 
 * * *
