@@ -92,6 +92,7 @@ cask "karabiner-elements"
 cask "oracle-jdk"
 cask "postman"
 
+cask "drawio"
 cask "xournal-plus-plus"
 
 ########################

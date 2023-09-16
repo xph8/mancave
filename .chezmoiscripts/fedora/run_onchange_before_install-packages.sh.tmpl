@@ -35,11 +35,14 @@ declare -a packages=(
     "jq"  # json processor
     "xclip"  # clipboard
     "make cmake go-task"
-    "mpd mpc ncmpcpp beets"  # media
+    "mpd mpc ncmpcpp cava beets"  # media
     "zathura zathura-plugins-all zathura-zsh-completion"  # document viewer
     "pandoc"
     "hyperfine"  # benchmark
     "lnav"  # log navigator
+
+    # de
+    "plasma-browser-integration"
 
     # utils
     "yt-dlp ffmpeg"
@@ -55,7 +58,7 @@ declare -a packages=(
 
     # rpm fusion packages
     "steam-devices"
-    # "akmod-nvidia"  # FIXME drivers
+    "akmod-nvidia"
 )
 
 sudo dnf upgrade --refresh -y

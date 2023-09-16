@@ -11,10 +11,11 @@ export XDG_DATA_HOME="$HOME/.local/share"
 # k8s
 export MINIKUBE_IN_STYLE=false
 export PATH="$HOME/.rd/bin:$PATH"
+export PATH="$PATH:/usr/local/bin"
 
 {{- if eq .chezmoi.os "linux" }}
 export COWPATH="$HOME/Archive/Miscellaneous/asciiart/"
 
-# mpc-ncmpcpp unix socket
+# mpd-ncmpcpp unix socket
 export MPD_HOST="$HOME/.config/mpd/socket"
 {{- end }}

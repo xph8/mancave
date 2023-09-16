@@ -12,10 +12,12 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- powerline symbols
 - stored playlists enable
 - `systemctl --user enable mpd`
+- xclip: replace with wayland equivalents
 - chagne location of Downloads, Pictures and other default folders
+- remove astro vim
+- powerline symbols
 - colour scheme
 - ssh config for multiple git accounts guide
 - mac settings

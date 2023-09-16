@@ -7,7 +7,7 @@ README.md
 .config/Code/User/settings.json
 .config/mpd/
 .config/ncmpcpp/
-.config/polybar/
+.config/eww/
 .local/
 Taskfile.yaml
 {{ end }}

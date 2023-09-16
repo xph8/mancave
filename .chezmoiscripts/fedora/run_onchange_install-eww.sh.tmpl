@@ -1,0 +1,23 @@
+#! /bin/sh
+
+{{- if ne .chezmoi.os "linux" }}
+exit 0
+{{- end }}
+
+declare -a applications=(
+    "gtk3 gtk3-devel"
+    "gtk-layer-shell gtk-layer-shell-devel"
+    "pango pango-devel"
+    "gdk-pixbuf2 gdk-pixbuf2-devel"
+    "cairo cairo-devel"
+    "glib2 glib2-devel"
+    "libgcc"
+    "glibc glibc-devel"
+)
+
+# install required libraries to compile eww
+for application in "${applications[@]}"; do
+    sudo dnf install -y $application
+done
+
+

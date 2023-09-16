@@ -2,13 +2,11 @@
 {{- $title := "mancave" -}}
 {{- $columns := 170 -}}
 {{- $size := 11 -}}
-{{- $program := "/usr/bin/tmux" -}}
 
 {{- if eq .chezmoi.os "darwin" -}}
 {{-   $title = "workstation" -}}
 {{-   $columns = 150 -}}
 {{-   $size = 14 -}}
-{{-   $program = "/usr/local/bin/tmux" -}}
 {{- end -}}
 
 window:
@@ -21,7 +19,7 @@ window:
     y: 5
 
 shell:
-  program: {{ $program }}
+  program: {{ output "which" "tmux" | trim }}
   args:  # create or attach a session
     - new-session
     - -A
