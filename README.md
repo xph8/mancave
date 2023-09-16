@@ -12,8 +12,6 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- stored playlists enable
-- `systemctl --user enable mpd`
 - xclip: replace with wayland equivalents
 - chagne location of Downloads, Pictures and other default folders
 - remove astro vim
