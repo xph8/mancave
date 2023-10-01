@@ -12,7 +12,6 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- xclip: replace with wayland equivalents
 - chagne location of Downloads, Pictures and other default folders
 - remove astro vim
 - powerline symbols

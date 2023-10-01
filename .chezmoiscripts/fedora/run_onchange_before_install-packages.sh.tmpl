@@ -29,11 +29,11 @@ declare -a packages=(
     "tldr"  # tldr manpages
     "micro neovim"  # editors
     "ranger"
-    "thefuck"
+    "thefuck"  # command auto correction
     "glances btop"  # resource monitors
-    "lsd bat ripgrep fd-find fzf"
+    "lsd bat ripgrep fd-find fzf"  # file utils
     "jq"  # json processor
-    "xclip"  # clipboard
+    "wl-clipboard"  # wayland clipboard
     "make cmake go-task"
     "mpd mpc ncmpcpp cava beets"  # media
     "zathura zathura-plugins-all zathura-zsh-completion"  # document viewer
@@ -45,8 +45,8 @@ declare -a packages=(
     "plasma-browser-integration"
 
     # utils
-    "yt-dlp ffmpeg"
-    "fdupes"
+    "yt-dlp"
+    "convert ffmpeg fdupes perl-Image-ExifTool"
 
     # networking tools
     "rsync"
@@ -57,7 +57,7 @@ declare -a packages=(
     "rofi"
 
     # rpm fusion packages
-    "steam-devices"
+    "steam-devices"  # required with steam flatpak
     "akmod-nvidia"
 )
 

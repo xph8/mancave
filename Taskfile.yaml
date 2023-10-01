@@ -1,40 +1,53 @@
 version: "3"
 
 vars:
-  YTDL_OPTIONS: -P $HOME/Downloads
+  YTDL_OPTIONS: -P $HOME/Downloads -o "%(title)s.%(ext)s"
   YTDL_AUDIO_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
 
 tasks:  # invoke: tg task -- args
 
   archive:
+    desc: "archive to storage"
     dir: "~/DSU"
     cmds:
-      - tar -cvf {{.CLI_ARGS}}.tar.gz {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
-      - rm -r -I {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
+      - tar -cvf {{.CLI_ARGS}}.tar.gz {{.USER_WORKING_DIR}}/{{.CLI_ARGS}} && rm -r -I {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
 
   lib:
+    desc: "interact with calibre web service"
     dir: "~/.local/share/services"
     cmds:
       - podman-compose -f calibre-web.yaml {{.CLI_ARGS}}
 
-  clean:
+  duplicates:
+    desc: "echo duplicate images"
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - fdupes -r .
 
   dl:
+    desc: "download video"
     cmds:
       - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio:
+    desc: "extract and download audio"
     cmds:
       - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio-list:
+    desc: "extract and download audio from playlist"
     cmds:
-      - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} --yes-playlist -o "%(title)s-%(id)s.%(ext)s" {{.CLI_ARGS}}
+      - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} --yes-playlist {{.CLI_ARGS}}
 
   audio-meta:
+    desc: "fix audio metadata"
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
       - beet import .
+
+  clean-images:
+    desc: "fix image extensions"
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - fd --hidden --extension jpg --exec sh -c 'convert "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
+      - fd --hidden --extension webp --exec sh -c 'convert "{}" "{.}.png" && echo "{}" && rm "{}"'

@@ -6,9 +6,9 @@ source ~/.config/asdf/asdf.sh
 declare -a plugins=(
     "python"
     "golang"
-    "ruby"
 
 {{- if eq .chezmoi.os "linux" }}
+    "ruby"
     "rust"
     "lua"
 {{- end }}

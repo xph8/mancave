@@ -28,3 +28,11 @@
   extract = true
   include = ["JetBrainsMonoNLNerdFont*.ttf"]
   refreshPeriod = "720h"
+
+[".local/share/fonts/ttf/Scientifica"]
+  type = "archive"
+  url = "https://github.com/nerdypepper/scientifica/releases/download/{{ output "sh" "-c" "git ls-remote --tags --refs --sort v:refname https://github.com/nerdypepper/scientifica.git | tail --lines 1 | awk '{print $2}' | cut -d / -f 3" | trim }}/scientifica.tar"
+  extract = true
+  stripComponents = 2
+  include = ["scientifica/ttf/*.ttf"]
+  refreshPeriod = "720h"
