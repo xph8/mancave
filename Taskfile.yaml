@@ -51,3 +51,7 @@ tasks:  # invoke: tg task -- args
     cmds:
       - fd --hidden --extension jpg --exec sh -c 'convert "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
       - fd --hidden --extension webp --exec sh -c 'convert "{}" "{.}.png" && echo "{}" && rm "{}"'
+
+  asdf-cleanup:
+    cmds:
+      - ~/.local/share/scripts/asdf-cleanup.sh

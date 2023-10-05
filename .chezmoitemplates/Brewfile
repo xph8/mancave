@@ -45,7 +45,6 @@ brew "onefetch"
 
 brew "cri-tools"
 brew "kubectx"
-brew "minikube"
 brew "openshift-cli"
 brew "danielfoehrkn/switch/switch"
 
@@ -53,7 +52,6 @@ brew "git"
 brew "git-delta"
 
 brew "go-bindata"
-brew "golangci-lint"
 
 brew "micro"
 brew "neovim"
@@ -85,14 +83,13 @@ cask "pycharm-ce"
 cask "visual-studio-code"
 cask "miniconda"
 
-cask "tableplus"
 cask "mongodb-compass"
 
 cask "karabiner-elements"
 cask "oracle-jdk"
-cask "postman"
 
 cask "drawio"
+cask "logseq"
 cask "xournal-plus-plus"
 
 ########################

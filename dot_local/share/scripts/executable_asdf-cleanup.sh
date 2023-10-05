@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# upgrade all plugins to point to latest version
+# purge all older versions
+
 # uninstalls all tool version that are not latest in global .tool-versions file
 # https://github.com/asdf-vm/asdf/issues/819
 

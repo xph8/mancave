@@ -7,18 +7,22 @@ declare -a plugins=(
     "python"
     "golang"
 
+    "golangci-lint"
+
+    "golangci-lint"
+
 {{- if eq .chezmoi.os "linux" }}
     "ruby"
     "rust"
     "lua"
 {{- end }}
 
-    "etcd"
     "terraform"
 
     "helm"
     "kustomize"
 
+    "etcd"
     "kubectl"
     "crictl"
     "nerdctl"
