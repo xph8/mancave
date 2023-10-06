@@ -13,3 +13,7 @@ declare -a packages=(
 for package in "${packages[@]}"; do
     cargo install $package
 done
+
+# reshim is needed after installing cargo packages
+# open issue - https://github.com/code-lever/asdf-rust/issues/14
+asdf reshim rust

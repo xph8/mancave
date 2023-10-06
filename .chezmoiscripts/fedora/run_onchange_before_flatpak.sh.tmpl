@@ -8,9 +8,6 @@ echo "Installing Flatpak applications"
 
 declare -a applications=(
 
-    # flatseal
-    "com.github.tchx84.Flatseal"
-
     # development software
     "io.github.shiftey.Desktop"
     "com.vscodium.codium"
@@ -62,6 +59,9 @@ declare -a applications=(
     "com.mojang.Minecraft"
     "org.prismlauncher.PrismLauncher"
     "net.rpcs3.RPCS3"
+
+    # ai tools
+    "org.upscayl.Upscayl"
 )
 
 sudo dnf install -y flatpak

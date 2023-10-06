@@ -52,6 +52,7 @@ tasks:  # invoke: tg task -- args
       - fd --hidden --extension jpg --exec sh -c 'convert "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
       - fd --hidden --extension webp --exec sh -c 'convert "{}" "{.}.png" && echo "{}" && rm "{}"'
 
-  asdf-cleanup:
+  asdf-prune:
+    desc: "uninstall all tool versions except the latest"
     cmds:
-      - ~/.local/share/scripts/asdf-cleanup.sh
+      - for plugin in $(asdf plugin-list); do asdf list $plugin | head --lines -1 | xargs -I $ asdf uninstall $plugin $; done
