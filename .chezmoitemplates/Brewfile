@@ -81,7 +81,6 @@ cask "github"
 cask "goland"
 cask "pycharm-ce"
 cask "visual-studio-code"
-cask "miniconda"
 
 cask "mongodb-compass"
 

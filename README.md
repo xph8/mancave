@@ -12,7 +12,6 @@ chezmoi init https://github.com/xph8/mancave.git
 ```
 
 TODO:
-- pipx
 - chagne location of Downloads, Pictures and other default folders
 - remove astro vim
 - powerline symbols
