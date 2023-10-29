@@ -18,6 +18,7 @@ declare -a packages=(
     # development environment
     "clang gcc"  # compilers
     "git gh git-delta"  # version control
+    "distrobox"
     "tmux"
     "httpie"
     "ansible"
@@ -70,6 +71,3 @@ done
 
 sudo dnf copr enable -y pennbauman/ports
 sudo dnf install -y lf
-
-sudo dnf copr enable -y alastortenebris/gallery-dl
-sudo dnf install -y gallery-dl

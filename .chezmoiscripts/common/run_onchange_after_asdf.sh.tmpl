@@ -15,6 +15,9 @@ declare -a plugins=(
     "ruby"
     "rust"
     "lua"
+    "haskell"
+
+    "gallery-dl"
 {{- end }}
 
     "terraform"
@@ -28,25 +31,15 @@ declare -a plugins=(
     "nerdctl"
 
     "kubebuilder"
+    "kubeseal"
     "minikube"
 
     "chezmoi"
     "lazygit"
 )
 
-function asdf_plugin_add {
-    asdf plugin add $1
-    exit_code=$?
-
-    if [ $exit_code == 2 ]; then
-        return 0  # plugin is already installed
-    fi
-
-    return $exit_code
-}
-
 for plugin in "${plugins[@]}"; do
-    asdf_plugin_add $plugin
+    asdf plugin add $plugin
     asdf install $plugin latest
     asdf global $plugin latest
 done
