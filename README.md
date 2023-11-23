@@ -17,7 +17,7 @@ TODO:
 - powerline symbols
 - colour scheme
 - ssh config for multiple git accounts guide
-- mac settings
+- mac settings / kwriteconfig5
 - firefox dotfiles https://github.com/twpayne/chezmoi/issues/1226
 
 * * *
@@ -26,6 +26,11 @@ Distro: Fedora
 
 Desktop Enviournment: KDE Plasma
 
+Icon Theme:
+Colour Scheme: Dantalian Nordic
+Plasma Theme:
+Cursor Style:
+
 * * *
 
 Typography:
@@ -33,9 +38,5 @@ Typography:
 - JetBrains Mono (monospace)
 - Scientifica (monospace bitmap)
 - Kochi Gothic (Japanese typeface)
-
-* * *
-
-Colour Scheme: Dantalian Nordic
 
 * * *

@@ -9,6 +9,8 @@
 {{-   $size = 14 -}}
 {{- end -}}
 
+{{- $primary_nerd_font := "JetBrainsMonoNL NF" -}}
+
 window:
   title: {{ $title }}
   dimensions:
@@ -29,16 +31,16 @@ shell:
 font:
   size: {{ $size }}
   normal:
-    family: JetBrainsMonoNL Nerd Font
+    family: {{ $primary_nerd_font }}
     style: Regular
   bold:
-    family: JetBrainsMonoNL Nerd Font
+    family: {{ $primary_nerd_font }}
     style: Bold
   italic:
-    family: JetBrainsMonoNL Nerd Font
+    family: {{ $primary_nerd_font }}
     style: Italic
   bold_italic:
-    family: JetBrainsMonoNL Nerd Font
+    family: {{ $primary_nerd_font }}
     style: Bold Italic
 
 cursor:
