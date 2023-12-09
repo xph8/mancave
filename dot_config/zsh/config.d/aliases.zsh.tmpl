@@ -5,7 +5,6 @@ alias ls="lsd"
 alias cat="bat"
 
 alias lgit="lazygit"
-alias tf="fuck"
 
 # task file
 {{- if eq .chezmoi.os "linux" }}
@@ -27,19 +26,21 @@ alias cb-paste="pbpaste"
 # k8s
 alias cri="crictl"
 alias nc="nerdctl"
-alias etc="etcdctl"
+alias etl="etcdctl"
 
 alias kc="kubectl"
 alias -g dn="config set-context --current --namespace"
 
 alias kb="kubebuilder"
 alias mk="minikube"
+alias tf="terraform"
 
 {{ if eq .chezmoi.os "darwin" }}
 alias sw="switch"
 INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 {{- end }}
 
+# misc
 {{ if eq .chezmoi.os "linux" }}
 # audio
 alias cava="TERM=st-256color cava"

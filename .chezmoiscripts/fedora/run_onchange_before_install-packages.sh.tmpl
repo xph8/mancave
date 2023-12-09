@@ -9,63 +9,93 @@ echo "Installing dnf packages"
 declare -a packages=(
 
     # essential and restricted packages
-    "ca-certificates gnupg"  # certificates
-    "wget curl"  # downloaders
-    "dkms"  # build essentials
-    "unrar zip unzip"  # archivers
-    "tlp"  # laptop power management tool
+    ca-certificates
+    gnupg1
+    gnupg2
+    wget
+    curl
+    dkms  # build essentials
+    unrar
+    zip
+    unzip
+    tlp  # laptop power management tool
 
     # development environment
-    "clang gcc"  # compilers
-    "git gh git-delta"  # version control
-    "distrobox"
-    "tmux"
-    "httpie"
-    "ansible"
+    clang
+    gcc
+    git
+    gh
+    git-delta
+    tmux
+    httpie
+
+    # infrastrucutre
+    podman
+    podman-compose
+    podman-tui
+    distrobox
+    vagrant
+    ansible
+    ansible-collection-awx-awx
 
     # terminal tools
-    "alacritty"
-    "neofetch cowsay"
-    "tldr"  # tldr manpages
-    "micro neovim"  # editors
-    "ranger"
-    "thefuck"  # command auto correction
-    "glances btop"  # resource monitors
-    "lsd bat ripgrep fd-find fzf"  # file utils
-    "jq"  # json processor
-    "wl-clipboard"  # wayland clipboard
-    "make cmake go-task"
-    "mpd mpc ncmpcpp cava beets"  # media
-    "zathura zathura-plugins-all zathura-zsh-completion"  # document viewer
-    "pandoc"
-    "hyperfine"  # benchmark
-    "lnav"  # log navigator
-    "irssi"  # chat client
+    alacritty
+    neofetch
+    cowsay
+    tldr  # tldr manpages
+    micro
+    neovim
+    ranger
+    thefuck  # command auto correction
+    glances
+    btop  # resource monitors
+    lsd
+    bat
+    ripgrep
+    fd-find
+    fzf  # file utils
+    jq  # json processor
+    wl-clipboard  # wayland clipboard
+    make
+    go-task
+    mpd
+    mpc
+    ncmpcpp
+    cava
+    beets  # media
+    zathura  # document viewer
+    zathura-plugins-all
+    zathura-zsh-completion
+    pandoc
+    hyperfine  # benchmark
+    lnav  # log navigator
+    irssi  # chat client
 
     # de
-    "plasma-browser-integration"
+    plasma-browser-integration
 
     # utils
-    "yt-dlp"
-    "convert ffmpeg fdupes perl-Image-ExifTool"
+    yt-dlp
+    # convert
+    ffmpeg
+    fdupes
+    perl-Image-ExifTool
 
     # networking tools
-    "rsync"
-    "fping"
-
-    # desktop
-    "polybar"
-    "rofi"
+    rsync
+    fping
 
     # rpm fusion packages
-    "steam-devices"  # required with steam flatpak
-    "akmod-nvidia"
+    steam-devices  # required with steam flatpak
+    akmod-nvidia
 )
 
-sudo dnf upgrade --refresh -y
+# sudo dnf upgrade --refresh -y
 
 for package in "${packages[@]}"; do
-    sudo dnf install -y $package
+    if ! dnf list installed $package; then
+        sudo dnf install -y $package
+    fi
 done
 
 # copr repositories
