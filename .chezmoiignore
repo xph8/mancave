@@ -4,14 +4,14 @@ README.md
 
 {{ if ne .chezmoi.os "linux" }}
 .config/asciisay
-.config/Code/User/settings.json
 .config/mpd/
 .config/ncmpcpp/
 .config/eww/
 .local/
+.var/
 Taskfile.yaml
 {{ end }}
 
 {{ if ne .chezmoi.os "darwin" }}
-Library/Application Support/Code/User/settings.json
+Library/
 {{ end }}

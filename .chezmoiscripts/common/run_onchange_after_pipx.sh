@@ -1,21 +1,21 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
-# update with python: {{ output "python" "--version" }}
+# update with python: {{ output python --version }}
 declare -a packages=(
-    "black"
-    "isort"
+    black
+    isort
 
-    "numpy"
-    "scipy"
-    "pandas"
-    "matplotlib"
-    "seaborn"
+    numpy
+    scipy
+    pandas
+    matplotlib
+    seaborn
 
-    "notebook"
-    "sphinx"
+    notebook
+    sphinx
 
-    "requests"
-    "pytest"
+    requests
+    pytest
 )
 
 for package in "${packages[@]}"; do

@@ -1,13 +1,5 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 if [[ $SHELL != *zsh ]]; then
-    chsh -s /bin/zsh
+    chsh -s $(which zsh)
 fi
-
-export ZDOTDIR="$HOME/.config/zsh"
-
-# FIXME link prezto files
-# setopt EXTENDED_GLOB
-# for rcfile in "$ZDOTDIR"/.zprezto/runcoms/^README.md(.N); do
-#   ln -s "$rcfile" "$ZDOTDIR/.${rcfile:t}"
-# done

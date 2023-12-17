@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 {{- if ne .chezmoi.os "linux" }}
 exit 0
@@ -90,7 +90,7 @@ declare -a packages=(
     akmod-nvidia
 )
 
-# sudo dnf upgrade --refresh -y
+sudo dnf upgrade --refresh -y
 
 for package in "${packages[@]}"; do
     if ! dnf list installed $package; then

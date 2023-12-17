@@ -1,41 +1,41 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 # explicitly enable asdf for first install
 source ~/.config/asdf/asdf.sh
 
 declare -a plugins=(
-    "python"
-    "golang"
+    python
+    golang
 
-    "pipx"
+    pipx
 
-    "golangci-lint"
+    golangci-lint
 
 {{- if eq .chezmoi.os "linux" }}
-    "ruby"
-    "rust"
-    "lua"
-    "haskell"
+    ruby
+    rust
+    lua
+    haskell
 
-    "gallery-dl"
+    gallery-dl
 {{- end }}
 
-    "terraform"
+    terraform
 
-    "helm"
-    "kustomize"
+    helm
+    kustomize
 
-    "etcd"
-    "kubectl"
-    "crictl"
-    "nerdctl"
+    etcd
+    kubectl
+    crictl
+    nerdctl
 
-    "kubebuilder"
-    "kubeseal"
-    "minikube"
+    kubebuilder
+    kubeseal
+    minikube
 
-    "chezmoi"
-    "lazygit"
+    chezmoi
+    lazygit
 )
 
 for plugin in "${plugins[@]}"; do
