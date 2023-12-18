@@ -4,5 +4,9 @@
 exit 0
 {{- end }}
 
+set -eufo pipefail
+
+echo " configuring system services"
+
 systemctl --user enable mpd.service
 sleep 2

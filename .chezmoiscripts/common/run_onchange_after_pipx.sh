@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+set -eufo pipefail
+
+echo " configuring pipx"
+
 # update with python: {{ output python --version }}
 declare -a packages=(
     black

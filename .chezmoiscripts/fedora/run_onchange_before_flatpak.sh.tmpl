@@ -4,7 +4,9 @@
 exit 0
 {{- end }}
 
-echo "Installing Flatpak applications"
+set -eufo pipefail
+
+echo " configuring flatpak"
 
 declare -a applications=(
 

@@ -4,69 +4,47 @@
 exit 0
 {{- end }}
 
-echo "Installing dnf packages"
+set -eufo pipefail
+
+echo " configuring dnf packages"
 
 declare -a packages=(
 
     # essential and restricted packages
     ca-certificates
-    gnupg1
-    gnupg2
-    wget
-    curl
+    wget curl
     dkms  # build essentials
-    unrar
-    zip
-    unzip
+    unrar zip unzip
     tlp  # laptop power management tool
 
     # development environment
-    clang
-    gcc
-    git
-    gh
-    git-delta
+    clang gcc
+    git gh git-delta
     tmux
     httpie
 
     # infrastrucutre
-    podman
-    podman-compose
-    podman-tui
+    podman podman-compose podman-tui
     distrobox
     vagrant
-    ansible
-    ansible-collection-awx-awx
+    ansible ansible-collection-awx-awx
 
     # terminal tools
     alacritty
-    neofetch
-    cowsay
+    neofetch cowsay
     tldr  # tldr manpages
-    micro
-    neovim
+    micro neovim
     ranger
     thefuck  # command auto correction
-    glances
-    btop  # resource monitors
-    lsd
-    bat
-    ripgrep
-    fd-find
-    fzf  # file utils
+    glances btop  # resource monitors
+    lsd bat ripgrep fd-find fzf  # file utils
     jq  # json processor
     wl-clipboard  # wayland clipboard
-    make
-    go-task
-    mpd
-    mpc
-    ncmpcpp
-    cava
-    beets  # media
-    zathura  # document viewer
-    zathura-plugins-all
-    zathura-zsh-completion
-    pandoc
+    make go-task
+    mpd mpc ncmpcpp
+    cava beets  # media
+    zathura zathura-plugins-all zathura-zsh-completion  # document viewer
+    pandoc  # document converter
     hyperfine  # benchmark
     lnav  # log navigator
     irssi  # chat client
@@ -76,7 +54,7 @@ declare -a packages=(
 
     # utils
     yt-dlp
-    # convert
+    # convert  # FIXME
     ffmpeg
     fdupes
     perl-Image-ExifTool

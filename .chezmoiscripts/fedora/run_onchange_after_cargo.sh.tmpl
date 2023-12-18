@@ -4,6 +4,10 @@
 exit 0
 {{- end }}
 
+set -eufo pipefail
+
+echo " configuring cargo"
+
 declare -a packages=(
     cargo-update
     topgrade

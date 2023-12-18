@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+set -eufo pipefail
+
+echo " configuring asdf"
+
 # explicitly enable asdf for first install
 source ~/.config/asdf/asdf.sh
 
@@ -12,7 +16,7 @@ declare -a plugins=(
     golangci-lint
 
 {{- if eq .chezmoi.os "linux" }}
-    ruby
+    # ruby
     rust
     lua
     haskell

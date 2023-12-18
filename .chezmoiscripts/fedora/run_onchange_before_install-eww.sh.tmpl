@@ -4,6 +4,10 @@
 exit 0
 {{- end }}
 
+set -eufo pipefail
+
+echo " configuring eww"
+
 declare -a applications=(
     "gtk3 gtk3-devel"
     "gtk-layer-shell gtk-layer-shell-devel"
