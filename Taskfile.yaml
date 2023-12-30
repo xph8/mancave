@@ -30,12 +30,12 @@ tasks:  # invoke: tg task -- args
       - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio:
-    desc: "extract and download audio"
+    desc: "extract audio"
     cmds:
       - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio-list:
-    desc: "extract and download audio from playlist"
+    desc: "extract audio from playlist"
     cmds:
       - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} --yes-playlist {{.CLI_ARGS}}
 
