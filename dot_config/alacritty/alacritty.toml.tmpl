@@ -1,0 +1,55 @@
+{{/* default values */}}
+{{- $title := "mancave" -}}
+{{- $columns := 170 -}}
+{{- $size := 11 -}}
+{{- $primary_nerd_font := "JetBrainsMonoNL NF" -}}
+
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $title = "workstation" -}}
+{{-   $columns = 150 -}}
+{{-   $size = 14 -}}
+{{- end -}}
+
+live_config_reload = true
+import = ["~/.config/alacritty/themes/dantalian-nordic.toml"]
+
+[window]
+title = "{{ $title }}"
+
+[window.dimensions]
+columns = {{ $columns }}
+lines = 30
+
+[window.padding]
+x = 5
+y = 5
+
+[shell]  # create or attach a session
+args = ["new-session", "-A", "-s", "primary"]
+program = "{{ output "which" "tmux" | trim }}"
+
+[font]
+size = {{ $size }}
+
+[font.normal]
+family = "{{ $primary_nerd_font }}"
+style = "Regular"
+
+[font.bold]
+family = "{{ $primary_nerd_font }}"
+style = "Bold"
+
+[font.italic]
+family = "{{ $primary_nerd_font }}"
+style = "Italic"
+
+[font.bold_italic]
+family = "{{ $primary_nerd_font }}"
+style = "Bold Italic"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
