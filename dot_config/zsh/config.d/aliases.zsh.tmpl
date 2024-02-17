@@ -23,6 +23,9 @@ alias cb-copy="pbcopy"
 alias cb-paste="pbpaste"
 {{- end }}
 
+# python
+alias pip="pipx"
+
 # k8s
 alias cri="crictl"
 alias nc="nerdctl"
@@ -30,6 +33,7 @@ alias etl="etcdctl"
 
 alias kc="kubectl"
 alias -g dn="config set-context --current --namespace"
+alias -g dry-yaml="--dry-run=client -o yaml"
 
 alias kb="kubebuilder"
 alias mk="minikube"
@@ -40,7 +44,6 @@ alias sw="switch"
 INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 {{- end }}
 
-# misc
 {{ if eq .chezmoi.os "linux" }}
 # audio
 alias cava="TERM=st-256color cava"

@@ -452,9 +452,9 @@ startup_slave_screen = visualizer
 ##
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
-#
-#locked_screen_width_part = 50
-#
+
+locked_screen_width_part = 30
+
 #ask_for_locked_screen_width_part = yes
 #
 ##

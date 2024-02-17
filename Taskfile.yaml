@@ -1,7 +1,7 @@
 version: "3"
 
 vars:
-  YTDL_OPTIONS: -P $HOME/Downloads -o "%(title)s.%(ext)s"
+  YTDL_OPTIONS: -P $HOME/Downloads/ytdl/ -o "%(title)s.%(ext)s"
   YTDL_AUDIO_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
 
 tasks:  # invoke: tg task -- args
@@ -11,12 +11,6 @@ tasks:  # invoke: tg task -- args
     dir: "~/DSU"
     cmds:
       - tar -cvf {{.CLI_ARGS}}.tar.gz {{.USER_WORKING_DIR}}/{{.CLI_ARGS}} && rm -r -I {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
-
-  lib:
-    desc: "interact with calibre web service"
-    dir: "~/.local/share/services"
-    cmds:
-      - podman-compose -f calibre-web.yaml {{.CLI_ARGS}}
 
   duplicates:
     desc: "echo duplicate images"
