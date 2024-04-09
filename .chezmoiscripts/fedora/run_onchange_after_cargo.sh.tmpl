@@ -9,9 +9,10 @@ set -eufo pipefail
 echo " configuring cargo"
 
 declare -a packages=(
+    atuin
     cargo-update
-    topgrade
     onefetch
+    topgrade
 )
 
 for package in "${packages[@]}"; do

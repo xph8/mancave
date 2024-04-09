@@ -63,9 +63,14 @@ declare -a packages=(
     rsync
     fping
 
+    # kde applications
+    marble  # atlas
+    kalzium  # periodic table
+    cantor  # graphs
+    kmahjongg kajongg  # mahjongg
+
     # rpm fusion packages
     steam-devices  # required with steam flatpak
-    akmod-nvidia
 )
 
 sudo dnf upgrade --refresh -y

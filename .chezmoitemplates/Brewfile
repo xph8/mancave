@@ -44,6 +44,7 @@ brew "hyperfine"
 brew "neofetch"
 brew "onefetch"
 
+brew "pipx"
 brew "cri-tools"
 brew "kubectx"
 brew "openshift-cli"
@@ -64,6 +65,7 @@ brew "openjdk"
 
 brew "bash"
 brew "zsh"
+brew "atuin"
 
 brew "autoconf"
 brew "coreutils"

@@ -11,15 +11,11 @@ declare -a plugins=(
     python
     golang
 
-    pipx
-
-    golangci-lint
-
 {{- if eq .chezmoi.os "linux" }}
     # ruby
     rust
     lua
-    haskell
+    # haskell
 
     gallery-dl
 {{- end }}

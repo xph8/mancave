@@ -4,7 +4,7 @@ set -eufo pipefail
 
 echo " configuring pipx"
 
-# update with python: {{ output python --version }}
+# update with python: {{ output "python" "--version" }}
 declare -a packages=(
     black
     isort

@@ -1,3 +1,5 @@
+# zmodload zsh/zprof  # zsh profiling start
+
 #######################################
 # prezto and powerlevel10k
 #######################################
@@ -30,5 +32,10 @@ unset conf
 # activate asdf version manager
 source ~/.config/asdf/asdf.sh
 
+# shell history with C-r
+eval "$(atuin init zsh --disable-up-arrow)"
+
 # thefuck corrections
 # eval $(thefuck --alias)
+
+# zprof  # zsh profiling end

@@ -2,7 +2,6 @@
 
 declare -a packages=(
     "plasma-discover"
-    "kmahjongg"
     "kmines"
     "kpat"
 )

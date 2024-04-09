@@ -16,8 +16,10 @@ set_title = false
 # Display the time in step titles
 display_time = true
 
+# Cleanup temporary or old files
 # cleanup = true
 
+# Skip sending a notification at the end of a run
 skip_notify = true
 
 [composer]
@@ -38,4 +40,4 @@ upgrade = true
 
 [flatpak]
 # Use sudo for updating the system-wide installation
-use_sudo = true
+use_sudo = false

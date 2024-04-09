@@ -17,8 +17,8 @@ Distro: [Fedora](https://fedoraproject.org/spins/kde/)
 
 Desktop Enviournment: [KDE Plasma](https://kde.org/plasma-desktop/)\
 Application Style: Breeze\
-Plasma Theme: [Carl Plasma](https://store.kde.org/p/1330604/)\
-KDE Colors: Carl\
+Plasma Style: Breeze\
+KDE Colours: [Carl](https://store.kde.org/p/1330604/)\
 Window Decoration: Breeze\
 Icons: Breeze Dark\
 Cursors: Breeze\
@@ -33,10 +33,3 @@ Typography:
 - Kochi Gothic (Japanese typeface)
 
 * * *
-
-TODO:
-- powerline symbols
-- colour scheme
-- ssh config for multiple git accounts guide
-- mac settings / kwriteconfig5
-- firefox dotfiles https://github.com/twpayne/chezmoi/issues/1226

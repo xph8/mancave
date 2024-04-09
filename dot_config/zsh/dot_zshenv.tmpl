@@ -19,6 +19,9 @@ export PATH="$PATH:/usr/local/bin"
 {{- if eq .chezmoi.os "linux" }}
 export COWPATH="$HOME/Archive/Miscellaneous/asciiart/"
 
+# podman socket for rootless access
+export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
+
 # mpd-ncmpcpp unix socket
 export MPD_HOST="$HOME/.config/mpd/socket"
 {{- end }}
