@@ -12,7 +12,7 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.fileNesting.enabled": true,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": true,
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
     "git.confirmSync": false,

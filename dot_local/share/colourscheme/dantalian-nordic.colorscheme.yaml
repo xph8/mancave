@@ -1,0 +1,25 @@
+background:
+  normal:
+    background: "#131517"
+    foreground: "#dadada"
+  bright:
+    background: "#1e1e1e"
+    foreground: "#c0c0c0"
+
+primary:
+  normal:
+    yellow: "#ebcb8b"
+    orange: "#dc836b"
+    red: "#bf616a"
+    purple: "#b48ead"
+    blue: "#81a1c1"
+    cyan: "#82bebc"
+    green: "#9cbf87"
+  bright:
+    yellow: "#f1ca81"
+    orange: "#e1907a"
+    red: "#cd5a68"
+    purple: "#b386a7"
+    blue: "#78a2c4"
+    cyan: "#8fc4c3"
+    green: "#98bf5b"

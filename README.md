@@ -7,7 +7,7 @@
         /_/
 ```
 
-```bash
+```console
 chezmoi init https://github.com/xph8/mancave.git
 ```
 
