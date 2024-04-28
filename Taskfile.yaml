@@ -3,8 +3,19 @@ version: "3"
 vars:
   YTDL_OPTIONS: -P $HOME/Downloads/ytdl/ -o "%(title)s.%(ext)s" -S "ext"
   YTDL_AUDIO_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
+  HOMELAB: ~/Primary/Devel/mancave-homelab/homelab.yaml
 
 tasks:  # invoke: tg task -- args
+
+  homeup:
+    desc: "bring up homelab"
+    cmds:
+      - podman-compose -f {{.HOMELAB}} up -d
+
+  homedown:
+    desc: "bring down homelab"
+    cmds:
+      - podman-compose -f {{.HOMELAB}} down
 
   archive:
     desc: "archive to storage"

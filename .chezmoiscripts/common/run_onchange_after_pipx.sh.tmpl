@@ -6,6 +6,9 @@ echo " configuring pipx"
 
 # update with python: {{ output "python" "--version" }}
 declare -a packages=(
+    poetry
+    notebook
+
     black
     isort
 
@@ -15,9 +18,7 @@ declare -a packages=(
     matplotlib
     seaborn
 
-    notebook
     sphinx
-
     requests
     pytest
 

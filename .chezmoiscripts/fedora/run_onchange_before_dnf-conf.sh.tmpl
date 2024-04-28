@@ -18,5 +18,11 @@ sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 # enable copr repository
 sudo dnf copr enable -y @neurofedora/neurofedora-extra
 
-# install appstream data
-sudo dnf group upgrade -y core
+declare -a plugins=(
+    dnf-plugin-system-upgrade
+    remove-retired-packages
+)
+
+for plugin in "${plugins[@]}"; do
+    sudo dnf install -y $plugin
+done

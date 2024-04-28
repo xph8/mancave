@@ -7,13 +7,13 @@ echo " configuring asdf"
 # explicitly enable asdf for first install
 source ~/.config/asdf/asdf.sh
 
+# at most weekly update: {{ output "date" "+'%U'" }}
 declare -a plugins=(
     python
     golang
 
 {{- if eq .chezmoi.os "linux" }}
     # ruby
-    rust
     lua
     # haskell
 
@@ -43,3 +43,7 @@ for plugin in "${plugins[@]}"; do
     asdf install $plugin latest
     asdf global $plugin latest
 done
+
+{{- if eq .chezmoi.os "linux" }}
+go-task --global asdf-prune
+{{- end }}

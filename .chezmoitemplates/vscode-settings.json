@@ -31,32 +31,22 @@
     "redhat.telemetry.enabled": false,
     "scm.diffDecorationsGutterAction": "diff",
     "telemetry.telemetryLevel": "off",
-    "terminal.integrated.defaultProfile.linux": "tmux",
-    "terminal.integrated.defaultProfile.osx": "tmux",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "JetBrainsMonoNL NF",
     "terminal.integrated.profiles.linux": {
-        "tmux": {
+        "zsh": {
             "args": [
                 "--host",
                 "--env=TERM=xterm-256color",
-                "tmux",
-                "new-session",
-                "-A",
-                "-s",
-                "vscode"
+                "zsh"
             ],
             "path": "/usr/bin/flatpak-spawn"
         }
     },
     "terminal.integrated.profiles.osx": {
-        "tmux": {
-            "args": [
-                "new-session",
-                "-A",
-                "-s",
-                "vscode"
-            ],
-            "path": "/usr/local/bin/tmux"
+        "zsh": {
+            "path": "/usr/local/bin/zsh"
         }
     },
     "update.mode": "none",

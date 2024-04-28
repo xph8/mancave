@@ -17,6 +17,8 @@ export PATH="$HOME/.rd/bin:$PATH"
 export PATH="$PATH:/usr/local/bin"
 
 {{- if eq .chezmoi.os "linux" }}
+export PATH="$PATH:$HOME/.cargo/bin"
+
 export COWPATH="$HOME/Archive/Miscellaneous/asciiart/"
 
 # podman socket for rootless access
