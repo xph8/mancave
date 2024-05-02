@@ -49,6 +49,8 @@
 {{- end }}
 
 [alias]
-    ch = checkout -b
+    abort = reset --merge
     amend = commit --amend
+    ch = checkout -b
+    fpush = push --force-with-lease
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

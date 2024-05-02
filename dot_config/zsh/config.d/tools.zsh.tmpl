@@ -1,0 +1,10 @@
+# activate asdf version manager
+source ~/.config/asdf/asdf.sh
+
+{{- if eq .chezmoi.os "linux" }}
+# shell history with C-r
+eval "$(atuin init zsh --disable-up-arrow)"
+{{- end }}
+
+# thefuck corrections
+# eval $(thefuck --alias)

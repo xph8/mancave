@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "darwin" }}
 source <(kubectl completion zsh)
 source <(oc completion zsh)
-source <(kubebuilder completion zsh)
+# source <(kubebuilder completion zsh)
 {{- end }}
 
 # asdf completions

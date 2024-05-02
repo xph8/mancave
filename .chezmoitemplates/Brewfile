@@ -41,7 +41,7 @@ brew "httpie"
 
 brew "tldr"
 brew "hyperfine"
-brew "neofetch"
+brew "fastfetch"
 brew "onefetch"
 
 brew "pipx"
@@ -65,7 +65,6 @@ brew "openjdk"
 
 brew "bash"
 brew "zsh"
-brew "atuin"
 
 brew "autoconf"
 brew "coreutils"

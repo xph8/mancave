@@ -25,17 +25,4 @@ for conf in "$ZDOTDIR"/config.d/**/*.zsh; do
 done
 unset conf
 
-#######################################
-# utils
-#######################################
-
-# activate asdf version manager
-source ~/.config/asdf/asdf.sh
-
-# shell history with C-r
-eval "$(atuin init zsh --disable-up-arrow)"
-
-# thefuck corrections
-# eval $(thefuck --alias)
-
 # zprof  # zsh profiling end
