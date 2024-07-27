@@ -3,8 +3,8 @@ Brewfile.lock.json
 README.md
 
 {{ if ne .chezmoi.os "linux" }}
-.config/asciisay
 .config/atuin/
+.config/containers/
 .config/fontconfig/
 .config/mpd/
 .config/ncmpcpp/

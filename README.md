@@ -33,3 +33,14 @@ Typography:
 - Kochi Gothic (Japanese typeface)
 
 * * *
+
+TODO:
+- git ssh setup
+- bitwarden cli for private keys
+- git submodule containers/systemd
+
+manual tasks:
+- setup rust
+- firefox install hash
+
+ssh-keygen -t ed25519 -C xpheight@gmail.com

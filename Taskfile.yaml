@@ -3,19 +3,19 @@ version: "3"
 vars:
   YTDL_OPTIONS: -P $HOME/Downloads/ytdl/ -o "%(title)s.%(ext)s" -S "ext"
   YTDL_AUDIO_OPTIONS: -ic --extract-audio --audio-format mp3 --audio-quality 0
-  HOMELAB: ~/Primary/Devel/mancave-homelab/homelab.yaml
+  HOMELAB: "$HOME/.config/containers/systemd/"
 
 tasks:  # invoke: tg task -- args
 
-  homeup:
-    desc: "bring up homelab"
+  home:
+    desc: "homelab controller"
+    vars:
+      QUADLETS:
+        sh: cd {{.HOMELAB}} && fd --extension kube --exec echo {.}
     cmds:
-      - podman-compose -f {{.HOMELAB}} up -d
-
-  homedown:
-    desc: "bring down homelab"
-    cmds:
-      - podman-compose -f {{.HOMELAB}} down
+    - systemctl --user daemon-reload
+    - for: { var: QUADLETS }
+      cmd: systemctl --user {{.CLI_ARGS}} {{.ITEM}}.service
 
   archive:
     desc: "archive to storage"
@@ -54,8 +54,8 @@ tasks:  # invoke: tg task -- args
     desc: "fix image extensions"
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
-      - fd --hidden --extension jpg --exec sh -c 'convert "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
-      - fd --hidden --extension webp --exec sh -c 'convert "{}" "{.}.png" && echo "{}" && rm "{}"'
+      - fd --hidden --extension jpg --exec sh -c 'magick "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
+      - fd --hidden --extension webp --exec sh -c 'magick "{}" "{.}.png" && echo "{}" && rm "{}"'
 
   asdf-prune:
     desc: "uninstall all tool versions except the latest"

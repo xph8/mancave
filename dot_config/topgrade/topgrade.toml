@@ -27,6 +27,7 @@ skip_notify = true
 
 # Custom commands
 [commands]
+"Podman" = "podman auto-update"
 #"Prezto Update" = "$HOME/.config/zsh/.zprezto/init.zsh zprezto-update"
 
 # Causes Topgrade to rename itself during the run to allow package managers

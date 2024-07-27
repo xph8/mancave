@@ -38,6 +38,7 @@ brew "lnav"
 brew "wget"
 brew "telnet"
 brew "httpie"
+brew "bind"  # dns utils
 
 brew "tldr"
 brew "hyperfine"

@@ -6,6 +6,8 @@ alias cat="bat"
 
 alias lgit="lazygit"
 
+alias stl="systemctl --user"
+
 # task file
 {{- if eq .chezmoi.os "linux" }}
 alias task="go-task"
@@ -16,11 +18,11 @@ alias tg="task --global"
 
 # clipboard utils
 {{- if eq .chezmoi.os "linux" }}
-alias cb-copy="wl-copy"
-alias cb-paste="wl-paste"
+alias cbcopy="wl-copy"
+alias cbpaste="wl-paste"
 {{- else if eq .chezmoi.os "darwin" }}
-alias cb-copy="pbcopy"
-alias cb-paste="pbpaste"
+alias cbcopy="pbcopy"
+alias cbpaste="pbpaste"
 {{- end }}
 
 # k8s

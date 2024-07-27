@@ -8,5 +8,6 @@ set -eufo pipefail
 
 echo " configuring system services"
 
+systemctl --user daemon-reload
+
 systemctl --user enable mpd.service
-sleep 2
