@@ -22,7 +22,7 @@ brew "rclone"
 brew "fping"
 
 brew "bat"
-brew "lsd"
+brew "eza"
 brew "tree"
 brew "lf"
 brew "fd"
@@ -34,6 +34,7 @@ brew "unzip"
 brew "go-task/tap/go-task"
 brew "btop"
 brew "lnav"
+brew "podman"
 
 brew "wget"
 brew "telnet"
@@ -49,20 +50,17 @@ brew "pipx"
 brew "cri-tools"
 brew "kubectx"
 brew "openshift-cli"
+brew "k9s"
 brew "danielfoehrkn/switch/switch"
 
 brew "git"
 brew "git-delta"
-
-brew "redis"
 
 brew "micro"
 brew "neovim"
 brew "zathura"
 brew "zathura-pdf-poppler"
 brew "pandoc"
-
-brew "openjdk"
 
 brew "bash"
 brew "zsh"
@@ -78,20 +76,19 @@ brew "pkg-config"
 # cask "firefox"
 
 cask "alacritty"
-cask "rancher"
+cask "podman-desktop"
 cask "github"
 
 cask "goland"
 cask "pycharm-ce"
 cask "visual-studio-code"
 
+cask "dbeaver-community"
 cask "mongodb-compass"
 
 cask "karabiner-elements"
-cask "oracle-jdk"
 
 cask "drawio"
-cask "logseq"
 cask "xournal-plus-plus"
 
 ########################

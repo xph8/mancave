@@ -10,6 +10,7 @@
 {{-   $size = 14 -}}
 {{- end -}}
 
+[general]
 live_config_reload = true
 import = ["~/.config/alacritty/themes/dantalian-nordic.toml"]
 
@@ -24,7 +25,7 @@ lines = 30
 x = 5
 y = 5
 
-[shell]  # create or attach a session
+[terminal.shell]  # create or attach a session
 args = ["new-session", "-A", "-s", "primary"]
 program = "{{ output "which" "tmux" | trim }}"
 
