@@ -22,7 +22,7 @@ KDE Colours: [Carl](https://store.kde.org/p/1330604/)\
 Window Decoration: Breeze\
 Icons: Breeze Dark\
 Cursors: Breeze\
-Colour Scheme: Dantalian Nordic
+Colour Scheme: Catppuccin Mocha
 
 * * *
 
@@ -42,5 +42,4 @@ TODO:
 manual tasks:
 - setup rust
 - firefox install hash
-
-ssh-keygen -t ed25519 -C xpheight@gmail.com
+  `{{ mozillaInstallHash $installPath }}` what's the install path of Firefox Flatpak? The world wonders

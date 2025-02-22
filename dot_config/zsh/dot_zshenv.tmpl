@@ -5,16 +5,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# pipx
-export USE_EMOJI=false
-
-# golang
-
 
 # k8s
 export MINIKUBE_IN_STYLE=false
-export PATH="$HOME/.rd/bin:$PATH"
-export PATH="$PATH:/usr/local/bin"
 
 {{- if eq .chezmoi.os "linux" }}
 export PATH="$PATH:$HOME/.cargo/bin"

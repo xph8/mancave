@@ -18,6 +18,7 @@ declare -a packages=(
     tlp  # laptop power management tool
 
     # development environment
+    alacritty
     clang gcc rustup
     git gh git-delta
     tmux
@@ -35,10 +36,10 @@ declare -a packages=(
     fastfetch cowsay
     tldr  # tldr manpages
     micro neovim
-    ranger
+    ranger  # file manager
     thefuck  # command auto correction
     glances btop  # resource monitors
-    lsd bat ripgrep fd-find fzf  # file utils
+    eza bat ripgrep fd-find fzf  # file utils
     jq  # json processor
     wl-clipboard  # wayland clipboard
     make go-task
@@ -82,8 +83,3 @@ for package in "${packages[@]}"; do
         sudo dnf install -y $package
     fi
 done
-
-# copr repositories
-
-sudo dnf copr enable -y pennbauman/ports
-sudo dnf install -y lf

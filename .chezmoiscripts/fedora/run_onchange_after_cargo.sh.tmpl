@@ -14,13 +14,19 @@ if [[ $? != 0 ]]; then
 fi
 
 declare -a packages=(
-    atuin
     cargo-update
-    onefetch
-    starship
-    topgrade
+
+    atuin  # terminal history
+    onefetch  # git repository stats
+    topgrade  # upgrade everything
+
+    # joshuto
 )
 
 for package in "${packages[@]}"; do
     cargo install $package
 done
+
+# uv: python dependency manager
+# must be built from Git rather than crates.io due to its dependency on unpublished crates
+cargo install --git https://github.com/astral-sh/uv uv

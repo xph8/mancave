@@ -2,7 +2,7 @@
 assume_yes = true
 
 # disable specific steps
-disable = ["containers", "git_repos", "helm", "pip3"]
+disable = ["containers", "git_repos", "helm", "pip3", "uv"]
 
 # ignore_failures = []
 

@@ -20,16 +20,10 @@ declare -a plugins=(
     gallery-dl
 {{- end }}
 
-    terraform
-
     helm
     kustomize
 
-    etcd
     kubectl
-    crictl
-    # nerdctl
-
     kubebuilder
     kubeseal
     minikube
@@ -45,5 +39,5 @@ for plugin in "${plugins[@]}"; do
 done
 
 {{- if eq .chezmoi.os "linux" }}
-go-task --global asdf-prune
+# go-task --global asdf-prune  # FIXME
 {{- end }}

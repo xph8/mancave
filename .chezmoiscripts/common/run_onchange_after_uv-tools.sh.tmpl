@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+set -eufo pipefail
+
+echo " configuring uv tools"
+
+declare -a packages=(
+    notebook
+
+    {{- if eq .chezmoi.os "linux" }}
+    FanFicFare
+    {{- end }}
+)
+
+for package in "${packages[@]}"; do
+    uv tool install $package
+done

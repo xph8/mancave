@@ -46,7 +46,8 @@ brew "hyperfine"
 brew "fastfetch"
 brew "onefetch"
 
-brew "pipx"
+brew "uv"
+
 brew "cri-tools"
 brew "kubectx"
 brew "openshift-cli"
