@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+{{- if ne .chezmoi.os "linux" }}
+exit 0
+{{- end }}
+
+echo " configuring firefox"
+
+{{ $installPath := "/app/bin" }}
+
+echo "path: {{ $installPath }}"
+echo "hash: {{ mozillaInstallHash $installPath }}"
+echo "hash: CF146F38BCAB2D21 expected"

@@ -1,0 +1,12 @@
+/* toolkit.legacyUserProfileCustomizations.stylesheets must be true in about:config */
+
+/* change font of bookmark toolbar */
+#PersonalToolbar {
+  font-family: "JetBrainsMonoNL NF", monospace;
+}
+
+/* hide folder icons in bookmark toolbar */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+#personal-bookmarks .bookmark-item[container="true"] .toolbarbutton-icon {
+  display:none!important;
+}
