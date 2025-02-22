@@ -2,7 +2,7 @@
     "*.yaml": {
         "tabsize": 2
     },
-    "colorscheme": "twilight",
+    "colorscheme": "catppuccin-mocha-transparent",
     "status": true,
     "tabstospaces": true
 }

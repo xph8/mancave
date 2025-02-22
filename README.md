@@ -22,7 +22,7 @@ KDE Colours: [Carl](https://store.kde.org/p/1330604/)\
 Window Decoration: Breeze\
 Icons: Breeze Dark\
 Cursors: Breeze\
-Colour Scheme: Catppuccin Mocha
+Colour Scheme: [Catppuccin Mocha](https://catppuccin.com/)
 
 * * *
 
