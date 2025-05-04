@@ -19,6 +19,7 @@ declare -a packages=(
     # development environment
     alacritty
     clang gcc rustup
+    uv
     git gh git-delta
     tmux
     httpie
@@ -71,8 +72,8 @@ declare -a packages=(
     cantor  # graphs
     kmahjongg kajongg  # mahjongg
 
-    # rpm fusion packages
-    steam-devices  # required with steam flatpak
+    # software
+    steam
 )
 
 sudo dnf upgrade --refresh -y
