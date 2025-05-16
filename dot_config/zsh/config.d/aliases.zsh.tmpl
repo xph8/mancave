@@ -1,4 +1,7 @@
-alias c="clear"
+#---------------------------------------------
+# general
+#---------------------------------------------
+
 alias e="micro"
 
 alias ls="lsd"
@@ -8,6 +11,10 @@ alias lgit="lazygit"
 
 alias stl="systemctl --user"
 
+#---------------------------------------------
+# utility
+#---------------------------------------------
+
 # task file
 {{- if eq .chezmoi.os "linux" }}
 alias task="go-task"
@@ -16,7 +23,7 @@ alias tg="go-task --global"
 alias tg="task --global"
 {{- end }}
 
-# clipboard utils
+# clipboard
 {{- if eq .chezmoi.os "linux" }}
 alias cbcopy="wl-copy"
 alias cbpaste="wl-paste"
@@ -24,6 +31,13 @@ alias cbpaste="wl-paste"
 alias cbcopy="pbcopy"
 alias cbpaste="pbpaste"
 {{- end }}
+
+# scratchpad
+alias scratch="tmux new-session -d -s scratchpad 'ranger ~/Auxiliary/scratchpad'"
+
+#---------------------------------------------
+# infra
+#---------------------------------------------
 
 # k8s
 alias cri="crictl"
@@ -38,10 +52,18 @@ alias kb="kubebuilder"
 alias mk="minikube"
 alias tf="terraform"
 
+#---------------------------------------------
+# osx
+#---------------------------------------------
+
 {{ if eq .chezmoi.os "darwin" }}
 alias sw="switch"
 INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 {{- end }}
+
+#---------------------------------------------
+# linux
+#---------------------------------------------
 
 {{ if eq .chezmoi.os "linux" }}
 # audio
@@ -52,6 +74,10 @@ alias say="cowsay"
 
 function code() {
   (flatpak run com.visualstudio.code $*)
+}
+
+function firefox() {
+  (flatpak run org.mozilla.firefox $*)
 }
 
 alias dl="noglob yt-dlp"
