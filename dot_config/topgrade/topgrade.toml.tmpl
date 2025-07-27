@@ -25,10 +25,12 @@ skip_notify = true
 [composer]
 # self_update = true
 
+{{- if eq .chezmoi.os "linux" -}}
 # Custom commands
 [commands]
 "Podman" = "podman auto-update"
 #"Prezto Update" = "$HOME/.config/zsh/.zprezto/init.zsh zprezto-update"
+{{- end -}}
 
 # Causes Topgrade to rename itself during the run to allow package managers
 # to upgrade it. Use this only if you installed Topgrade by using a package

@@ -1,3 +1,4 @@
 data:
   username: "username"
   email: "user@domain.com"
+  signingkey: "gpg-key-id"
