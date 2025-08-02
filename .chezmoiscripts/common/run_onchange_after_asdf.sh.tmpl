@@ -9,7 +9,6 @@ source ~/.config/asdf/asdf.sh
 
 # at most weekly update: {{ output "date" "+'%U'" }}
 declare -a plugins=(
-    python
     golang
 
 {{- if eq .chezmoi.os "linux" }}

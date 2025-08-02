@@ -11,6 +11,15 @@
 [init]
     defaultBranch = master
 
+[branch]
+    sort = -committerdate
+
+[column]
+    ui = auto
+
+[tag]
+    sort = -version:refname
+
 [diff]
     colorMoved = default
 
@@ -19,6 +28,10 @@
 
 [push]
     autoSetupRemote = true
+
+[maintenance]
+    auto = true
+    strategy = incremental
 
 [interactive]
     diffFilter = delta --color-only
@@ -57,3 +70,8 @@
     ch = checkout -b
     fpush = push --force-with-lease
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    back = checkout -
+    prune = fetch --prune
+
+[help]
+    autocorrect = prompt

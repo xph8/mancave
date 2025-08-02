@@ -19,12 +19,9 @@ brew "topgrade"
 brew "thefuck"
 brew "tmux"
 brew "rclone"
-brew "fping"
 
 brew "bat"
-brew "eza"
 brew "tree"
-brew "lf"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
@@ -37,9 +34,9 @@ brew "lnav"
 brew "podman"
 
 brew "wget"
-brew "telnet"
 brew "httpie"
 brew "bind"  # dns utils
+brew "fping"
 
 brew "tldr"
 brew "hyperfine"
@@ -74,7 +71,7 @@ brew "pkg-config"
 # casks
 ########################
 
-# cask "firefox"
+cask "firefox"
 
 cask "alacritty"
 cask "podman-desktop"
