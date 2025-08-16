@@ -5,6 +5,7 @@
 alias e="micro"
 
 alias ls="lsd"
+alias lsa="yazi"
 alias cat="bat"
 
 alias du1="du -h --max-depth 1"
@@ -34,8 +35,8 @@ alias cbcopy="pbcopy"
 alias cbpaste="pbpaste"
 {{- end }}
 
-# scratchpad
-alias scratch="tmux new-session -d -s scratchpad 'ranger ~/Auxiliary/scratchpad'"
+# scratchpad notebook
+alias nb="tmux new-session -d -s scratchpad 'yazi ~/Auxiliary/scratchpad'"
 
 #---------------------------------------------
 # infra
@@ -70,7 +71,7 @@ INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 {{ if eq .chezmoi.os "linux" }}
 # audio
 alias cava="TERM=st-256color cava"
-alias ncp="ncmpcpp"
+alias ncp="tmux new-session -d -s ncmpcpp 'ncmpcpp'"
 
 alias say="cowsay"
 

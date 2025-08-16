@@ -30,13 +30,13 @@ declare -a packages=(
     distrobox
     vagrant
     ansible ansible-collection-awx-awx
+    ollama
 
     # terminal tools
     alacritty
     fastfetch cowsay
     tldr  # tldr manpages
     micro neovim
-    ranger  # file manager
     thefuck  # command auto correction
     glances btop  # resource monitors
     bat ripgrep fd-find fzf  # file utils
@@ -84,3 +84,6 @@ for package in "${packages[@]}"; do
         sudo dnf install -y $package
     fi
 done
+
+sudo dnf copr enable -y lihaohong/yazi
+sudo dnf install -y yazi
