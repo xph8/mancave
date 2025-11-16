@@ -35,8 +35,8 @@ alias cbcopy="pbcopy"
 alias cbpaste="pbpaste"
 {{- end }}
 
-# scratchpad notebook
-alias nb="tmux new-session -d -s scratchpad 'yazi ~/Auxiliary/scratchpad'"
+# notebook session
+alias nb="tmux new-session -d -s notebook 'yazi ~/Auxiliary/scratches'"
 
 #---------------------------------------------
 # infra
@@ -77,10 +77,6 @@ alias say="cowsay"
 
 function code() {
   (flatpak run com.visualstudio.code $*)
-}
-
-function firefox() {
-  (flatpak run org.mozilla.firefox $*)
 }
 
 alias dl="noglob yt-dlp"
