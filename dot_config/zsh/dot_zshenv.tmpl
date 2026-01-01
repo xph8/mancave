@@ -8,10 +8,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-
-# k8s
-export MINIKUBE_IN_STYLE=false
-
 {{- if eq .chezmoi.os "linux" }}
 export PATH="$PATH:$HOME/.cargo/bin"
 

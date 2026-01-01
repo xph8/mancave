@@ -21,43 +21,43 @@ tasks:  # invoke: tg task -- args
     desc: "archive to storage"
     dir: "~/DSU"
     cmds:
-      - tar -cvf {{.CLI_ARGS}}.tar.gz {{.USER_WORKING_DIR}}/{{.CLI_ARGS}} && rm -r -I {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
+    - tar -cvf {{.CLI_ARGS}}.tar.gz {{.USER_WORKING_DIR}}/{{.CLI_ARGS}} && rm -r -I {{.USER_WORKING_DIR}}/{{.CLI_ARGS}}
 
   duplicates:
     desc: "echo duplicate images"
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
-      - fdupes -r .
+    - fdupes -r .
 
   dl:
     desc: "download video"
     cmds:
-      - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
+    - yt-dlp {{.YTDL_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio:
     desc: "extract audio"
     cmds:
-      - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
+    - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} {{.CLI_ARGS}}
 
   dl-audio-list:
     desc: "extract audio from playlist"
     cmds:
-      - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} --yes-playlist {{.CLI_ARGS}}
+    - yt-dlp {{.YTDL_OPTIONS}} {{.YTDL_AUDIO_OPTIONS}} --yes-playlist {{.CLI_ARGS}}
 
   audio-meta:
     desc: "fix audio metadata"
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
-      - beet import .
+    - beet import .
 
   clean-images:
     desc: "fix image extensions"
     dir: "{{.USER_WORKING_DIR}}"
     cmds:
-      - fd --hidden --extension jpg --exec sh -c 'magick "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
-      - fd --hidden --extension webp --exec sh -c 'magick "{}" "{.}.png" && echo "{}" && rm "{}"'
+    - fd --hidden --extension jpg --exec sh -c 'magick "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
+    - fd --hidden --extension webp --exec sh -c 'magick "{}" "{.}.png" && echo "{}" && rm "{}"'
 
   asdf-prune:
     desc: "uninstall all tool versions except the latest"
     cmds:
-      - for plugin in $(asdf plugin-list); do asdf list $plugin | head --lines -1 | xargs -I $ asdf uninstall $plugin $; done
+    - for plugin in $(asdf plugin-list); do asdf list $plugin | head --lines -1 | xargs -I $ asdf uninstall $plugin $; done

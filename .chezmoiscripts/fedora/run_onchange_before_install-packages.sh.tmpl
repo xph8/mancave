@@ -10,14 +10,9 @@ echo " configuring dnf packages"
 
 declare -a packages=(
 
-    # essential and restricted packages
-    ca-certificates
-    wget curl
-    dkms  # build essentials
-    unrar zip unzip
-
     # development environment
     alacritty
+    kind
     clang gcc rustup
     uv
     git gh git-delta
@@ -29,16 +24,13 @@ declare -a packages=(
     podman podman-compose
     distrobox
     vagrant
-    ansible ansible-collection-awx-awx
     ollama
 
     # terminal tools
     alacritty
     fastfetch cowsay
-    tldr  # tldr manpages
     micro neovim
-    thefuck  # command auto correction
-    glances btop  # resource monitors
+    btop  # resource monitor
     bat ripgrep fd-find fzf  # file utils
     jq  # json processor
     wl-clipboard  # wayland clipboard
@@ -81,7 +73,7 @@ declare -a packages=(
 sudo dnf upgrade --refresh -y
 
 for package in "${packages[@]}"; do
-    if ! dnf list installed $package; then
+    if ! dnf list installed $package | grep "Installed"; then
         sudo dnf install -y $package
     fi
 done
