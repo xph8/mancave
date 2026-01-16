@@ -1,0 +1,14 @@
+[settings]
+color_theme = "catppuccin"
+
+[tools]
+yazi = { version = "latest", os = ["linux"] }
+gallery-dl = { version = "latest", os = ["linux"] }
+
+lazygit = { version = "latest", os = ["linux"] }
+
+golang = "latest"
+
+kubectl = { version = "latest", os = ["linux"] }
+kubebuilder = { version = "latest", os = ["linux"] }
+kubeseal = { version = "latest", os = ["linux"] }

@@ -28,6 +28,7 @@ declare -a packages=(
 
     # terminal tools
     alacritty
+    chezmoi
     fastfetch cowsay
     micro neovim
     btop  # resource monitor
@@ -70,13 +71,11 @@ declare -a packages=(
     discord
 )
 
-sudo dnf upgrade --refresh -y
-
 for package in "${packages[@]}"; do
     if ! dnf list installed $package | grep "Installed"; then
         sudo dnf install -y $package
     fi
 done
 
-sudo dnf copr enable -y lihaohong/yazi
-sudo dnf install -y yazi
+sudo dnf copr enable jdxcode/mise
+sudo dnf install mise

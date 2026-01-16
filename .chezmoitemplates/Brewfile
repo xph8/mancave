@@ -12,9 +12,11 @@ tap "zegervdv/zathura"
 # brew
 ########################
 
-brew "ansible"
 brew "topgrade"
 brew "tmux"
+brew "chezmoi"
+
+brew "ansible"
 brew "rclone"
 
 brew "bat"
@@ -41,27 +43,28 @@ brew "fastfetch"
 brew "onefetch"
 brew "cava"
 
+brew "mise"
 brew "uv"
 
-brew "kind"
-brew "cri-tools"
+brew "kubectl"
 brew "kubectx"
 brew "openshift-cli"
 brew "k9s"
+brew "helm"
+brew "kubebuilder"
+brew "kubeseal"
+brew "kind"
 brew "danielfoehrkn/switch/switch"
 
 brew "git"
 brew "git-delta"
+brew "lazygit"
 
 brew "micro"
 brew "neovim"
 brew "zathura"
 brew "zathura-pdf-poppler"
 brew "pandoc"
-
-brew "autoconf"
-brew "coreutils"
-brew "pkg-config"
 
 ########################
 # casks
@@ -81,6 +84,7 @@ cask "dbeaver-community"
 cask "mongodb-compass"
 
 cask "karabiner-elements"
+cask "alt-tab"
 
 cask "drawio"
 

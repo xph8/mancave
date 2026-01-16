@@ -2,14 +2,6 @@
 # repositories
 ########################
 
-[".config/asdf"]
-  type = "git-repo"
-  url = "https://github.com/asdf-vm/asdf.git"
-  [".config/asdf".clone]  # clone latest tag
-    args = ["--branch", "{{ output "sh" "-c" "git ls-remote --tags --refs --sort v:refname https://github.com/asdf-vm/asdf.git | tail --lines 1 | awk '{print $2}' | cut -d / -f 3" | trim }}"]
-  [".config/asdf".pull]  # updates are handled by topgrade
-    args = ["--dry-run"]
-
 [".config/zsh/.zprezto"]
   type = "git-repo"
   url = "https://github.com/sorin-ionescu/prezto.git"

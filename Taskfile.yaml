@@ -56,8 +56,3 @@ tasks:  # invoke: tg task -- args
     cmds:
     - fd --hidden --extension jpg --exec sh -c 'magick "{}" "{.}.jpeg" && echo "{}" && rm "{}"'
     - fd --hidden --extension webp --exec sh -c 'magick "{}" "{.}.png" && echo "{}" && rm "{}"'
-
-  asdf-prune:
-    desc: "uninstall all tool versions except the latest"
-    cmds:
-    - for plugin in $(asdf plugin-list); do asdf list $plugin | head --lines -1 | xargs -I $ asdf uninstall $plugin $; done
