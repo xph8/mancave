@@ -8,8 +8,7 @@ set -eufo pipefail
 
 echo " configuring cargo"
 
-which cargo
-if [[ $? != 0 ]]; then
+if [ ! $(which cargo) ]; then
     rustup-init  # FIXME automate this
 fi
 
@@ -19,10 +18,8 @@ declare -a packages=(
     atuin  # terminal history
     onefetch  # git repository stats
     topgrade  # upgrade everything
-
-    # joshuto
 )
 
 for package in "${packages[@]}"; do
-    cargo install $package
+    cargo install --locked $package
 done

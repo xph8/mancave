@@ -2,6 +2,8 @@
     "accessibility.dimUnfocused.enabled": true,
     "accessibility.dimUnfocused.opacity": 0.85,
     "chat.commandCenter.enabled": false,
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "chat.titleBar.signIn.enabled": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.accessibilitySupport": "off",
@@ -9,7 +11,7 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.fileNesting.enabled": true,
-    "extensions.autoUpdate": true,
+    "extensions.autoUpdate": "on",
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
     "git.confirmSync": false,
@@ -55,11 +57,15 @@
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 1,
     "workbench.activityBar.location": "top",
+    "workbench.browser.showInTitleBar": false,
     "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.editor.empty.hint": "hidden",
     "workbench.iconTheme": "catppuccin-mocha",
     "workbench.layoutControl.enabled": false,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
     "workbench.startupEditor": "none",
     "yaml.schemas": {
         "kubernetes": "*.yaml"
-    }
+    },
+    "chat.viewSessions.orientation": "stacked"
 }

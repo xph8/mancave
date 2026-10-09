@@ -36,11 +36,6 @@ declare -a extensions=(
 
     eamodio.gitlens
     ms-vscode.makefile-tools
-    42Crunch.vscode-openapi
-
-    {{- if eq .chezmoi.os "darwin" }}
-    GitHub.copilot
-    {{- end }}
 )
 
 {{- if eq .chezmoi.os "linux" }}

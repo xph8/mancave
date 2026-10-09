@@ -24,7 +24,6 @@ brew "tree"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
-brew "gnu-tar"
 brew "jq"
 brew "unzip"
 brew "go-task/tap/go-task"
@@ -41,20 +40,23 @@ brew "fping"
 brew "hyperfine"
 brew "fastfetch"
 brew "onefetch"
-brew "cava"
 
 brew "mise"
+brew "apm"
 brew "uv"
 
 brew "kubectl"
 brew "kubectx"
-brew "openshift-cli"
 brew "k9s"
 brew "helm"
 brew "kubebuilder"
 brew "kubeseal"
 brew "kind"
 brew "danielfoehrkn/switch/switch"
+
+brew "openstackclient"
+brew "openshift-cli"
+brew "awscli"
 
 brew "git"
 brew "git-delta"
@@ -71,22 +73,26 @@ brew "pandoc"
 ########################
 
 cask "firefox"
+cask "1password"
+casl "1password-cli"
 
 cask "alacritty"
 cask "podman-desktop"
 cask "github"
 
+cask "jetbrains-toolbox"
 cask "goland"
 cask "pycharm"
 cask "visual-studio-code"
 
-cask "dbeaver-community"
 cask "mongodb-compass"
 
 cask "karabiner-elements"
 cask "alt-tab"
 
 cask "drawio"
+cask "bruno"
+cask "cyberduck"
 
 ########################
 # fonts

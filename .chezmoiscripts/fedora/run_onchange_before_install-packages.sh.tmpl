@@ -19,6 +19,7 @@ declare -a packages=(
     tmux
     httpie
     protobuf-compiler protobuf-devel
+    openssl-devel
 
     # infrastrucutre
     podman podman-compose
@@ -31,6 +32,7 @@ declare -a packages=(
     chezmoi
     fastfetch cowsay
     micro neovim
+    lsd
     btop  # resource monitor
     bat ripgrep fd-find fzf  # file utils
     jq  # json processor
@@ -49,7 +51,7 @@ declare -a packages=(
 
     # utils
     yt-dlp
-    ffmpeg
+    ffmpeg-free
     fdupes
     perl-Image-ExifTool
     ImageMagick
@@ -77,5 +79,5 @@ for package in "${packages[@]}"; do
     fi
 done
 
-sudo dnf copr enable jdxcode/mise
-sudo dnf install mise
+sudo dnf copr enable -y jdxcode/mise
+sudo dnf install -y mise

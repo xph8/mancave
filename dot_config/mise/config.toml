@@ -2,6 +2,8 @@
 color_theme = "catppuccin"
 
 [tools]
+apm = { version = "latest", os = ["linux"] }
+
 yazi = { version = "latest", os = ["linux"] }
 gallery-dl = { version = "latest", os = ["linux"] }
 

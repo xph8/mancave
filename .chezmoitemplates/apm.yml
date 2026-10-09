@@ -1,0 +1,12 @@
+name: managed
+version: 1.0.0
+description: machine global skills
+author: managed
+targets:
+  - agent-skills
+dependencies:
+  apm:
+    - JuliusBrussee/caveman
+  mcp: []
+includes: auto
+scripts: {}
